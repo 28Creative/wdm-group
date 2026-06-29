@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "KBNzLF9_guY3iR6stYDcP"
+uri = "file://artifacts/wdm/public/images/architecture-1.png"
+type = "image"
+title = "Architectural modern building exterior"
+
+[[generated]]
+id = "N4xWDCVJEYqL2-_ccFOns"
+uri = "file://artifacts/wdm/public/images/interior-1.png"
+type = "image"
+title = "Calm interior architectural space"
+
+[[generated]]
+id = "1baJe29Ax6DzDNzKM-ijv"
+uri = "file://artifacts/wdm/public/images/team-1.png"
+type = "image"
+title = "Team headshot professional 1"
+
+[[generated]]
+id = "J1xwm8-o2sjnml6NfXgdp"
+uri = "file://artifacts/wdm/public/images/team-2.png"
+type = "image"
+title = "Team headshot professional 2"
+
+[[generated]]
+id = "HAKwKU_HyHA44Fs9RJICb"
+uri = "file://artifacts/wdm/public/images/process-1.png"
+type = "image"
+title = "Architectural sketch or blueprints"

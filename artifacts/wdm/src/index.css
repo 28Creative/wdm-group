@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-graphite);
+  --color-border: var(--color-stone);
+  --color-input: var(--color-stone);
+  --color-ring: var(--color-yellow);
+
+  --color-primary: var(--color-graphite);
+  --color-primary-foreground: var(--color-white);
+  --color-secondary: var(--color-stone);
+  --color-secondary-foreground: var(--color-graphite);
+  --color-accent: var(--color-yellow);
+  --color-accent-foreground: var(--color-graphite);
+
+  --font-sans: 'Roboto', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+
+  --text-caption: 14px;
+  --text-body: 16px;
+  --text-lead: 18px;
+  --text-h4: 24px;
+  --text-h3: 32px;
+  --text-h2: 48px;
+  --text-h1: 64px;
+}
+
+:root {
+  /* Brand Colors */
+  --color-graphite: #2B2F33;
+  --color-stone: #E5E0D6;
+  --color-yellow: #F2C94C;
+  --color-gold: #D9A441;
+  --color-white: #FFFFFF;
+
+  --background: var(--color-white);
+  --foreground: var(--color-graphite);
+  --border: var(--color-stone);
+
+  /* Shadcn standard vars mappings where needed */
+  --card: var(--color-white);
+  --card-foreground: var(--color-graphite);
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-graphite);
+  --muted: var(--color-stone);
+  --muted-foreground: #666666;
+  --radius: 0; /* Sharp architectural corners */
+}
+
+.dark {
+  /* We stick to a unified theme based on the brief, but handle dark just in case */
+  --background: var(--color-graphite);
+  --foreground: var(--color-white);
+  --border: #444;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans text-base antialiased bg-[var(--color-white)] text-[var(--color-graphite)];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+
+  h1 { font-size: clamp(2.5rem, 5vw, var(--text-h1)); line-height: 1.1; font-weight: 700; }
+  h2 { font-size: clamp(2rem, 4vw, var(--text-h2)); line-height: 1.2; font-weight: 600; }
+  h3 { font-size: clamp(1.5rem, 3vw, var(--text-h3)); line-height: 1.3; font-weight: 600; }
+  h4 { font-size: clamp(1.25rem, 2vw, var(--text-h4)); line-height: 1.4; font-weight: 600; }
+  .lead { font-size: var(--text-lead); line-height: 1.6; }
+  .body { font-size: var(--text-body); line-height: 1.6; }
+  .caption { font-size: var(--text-caption); line-height: 1.5; }
+}
+
+@layer utilities {
+  .clip-path-rhombus {
+    /* Architectural angled lean echoing W and M */
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  }
+
+  .hover-image-zoom {
+    transition: transform 0.4s ease;
+  }
+  
+  .hover-image-zoom:hover {
+    transform: scale(1.03);
+  }
+
+  .grayscale-transition {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  .grayscale-transition:hover {
+    filter: grayscale(0%);
+  }
+}

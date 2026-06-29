@@ -1,0 +1,46 @@
+PHASE 1 — REPLIT PROMPT
+
+Build a Next.js 14 project using the App Router and Tailwind CSS for an architecture firm called Why Design Matters (WDM).
+Design System — implement as CSS custom properties, no hardcoded values anywhere in the codebase:
+Colours:
+
+--color-graphite: #2B2F33 (primary, text, dark backgrounds)
+--color-stone: #E5E0D6 (warm neutral, section backgrounds, calm spaces)
+--color-yellow: #F2C94C (signature accent, CTAs, highlights)
+--color-gold: #D9A441 (contrast accent, formal use)
+--color-white: #FFFFFF
+
+Typography:
+
+Headings: Montserrat (Google Fonts) — weights 400, 600, 700
+Body: Roboto (Google Fonts) — weights 400, 500
+Base font size: 16px
+Scale: 14px caption / 16px body / 18px lead / 24px h4 / 32px h3 / 48px h2 / 64px h1
+
+Brand shape: WDM uses a rhombus/diamond shape with an angled lean matching the W and M letterforms in the logo. This shape should be defined as a reusable SVG component and CSS clip-path utility that can be applied to image containers and decorative elements throughout the site.
+Reusable Components to build (no page content yet):
+
+<Navigation> — Logo left, nav links centre/right (Home, About, What We Do, Sector Expertise, Projects, Insights, Podcasts, Contact Us), "Start a Conversation" CTA button right in yellow. Mobile hamburger menu. Sticky on scroll.
+<Footer> — Logo, strapline, nav links, contact details, copyright line. Dark graphite background.
+<Button> — variants: primary (yellow fill, graphite text), secondary (graphite fill, white text), ghost (transparent, graphite border)
+<SectionWrapper> — consistent max-width (1280px), horizontal padding, optional stone or white background prop
+<Card> — image slot (with rhombus clip-path option), title, body, CTA link
+<ImageBand> — full-width image with dark overlay and text/CTA overlay slot. Supports subtle zoom on hover (CSS transform scale transition, not JS)
+<TeamCard> — photo (greyscale by default, transitions to colour on hover), name, role, bio excerpt, CTA button. Photo uses CSS filter: grayscale(100%) transitioning to grayscale(0%) on hover.
+<SectorCard> — large image, sector title, descriptor, tick list, CTA link
+<ProcessStep> — icon slot, step number, title, one-line descriptor. Used in horizontal (desktop) and vertical (mobile) orientations
+<InsightCard> — image, category tag, title, summary, read more link
+<Modal> — accessible overlay component with close button, backdrop click to close, focus trap. Used for team profile lightboxes
+
+Routing stubs — create empty page files for all of these:
+
+/ /about /what-we-do /sector-expertise /sector/education /sector/commercial /sector/residential /sector/hospitality /projects /insights /podcasts /contact
+Motion principles (apply globally):
+
+Subtle image zoom on hover: transition: transform 0.4s ease with scale(1.03)
+Greyscale to colour on team photos: transition: filter 0.3s ease
+No heavy scroll animations, no parallax, no elements that move constantly without user interaction
+Fade-in on scroll for section entries using Intersection Observer (subtle opacity + slight translateY, nothing dramatic)
+
+Do not build any page content yet. Just the system, components, and route stubs.
+

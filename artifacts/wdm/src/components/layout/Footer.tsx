@@ -1,0 +1,55 @@
+import { Link } from "wouter";
+
+export function Footer() {
+  return (
+    <footer className="bg-[var(--color-graphite)] text-[var(--color-stone)] pt-20 pb-10">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="space-y-6 lg:col-span-1">
+            <Link href="/" className="inline-block font-heading font-bold text-2xl tracking-tight text-[var(--color-white)] uppercase">
+              WDM
+            </Link>
+            <p className="text-sm leading-relaxed max-w-sm">
+              Because architecture is fundamentally about the human impact of the spaces we inhabit. Why design matters, above all else.
+            </p>
+          </div>
+          
+          <div>
+            <h4 className="font-heading font-semibold text-white mb-6 text-lg">Practice</h4>
+            <ul className="space-y-4 text-sm">
+              <li><Link href="/about" className="hover:text-[var(--color-yellow)] transition-colors">About Us</Link></li>
+              <li><Link href="/what-we-do" className="hover:text-[var(--color-yellow)] transition-colors">What We Do</Link></li>
+              <li><Link href="/projects" className="hover:text-[var(--color-yellow)] transition-colors">Projects</Link></li>
+              <li><Link href="/sector-expertise" className="hover:text-[var(--color-yellow)] transition-colors">Sector Expertise</Link></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="font-heading font-semibold text-white mb-6 text-lg">Thinking</h4>
+            <ul className="space-y-4 text-sm">
+              <li><Link href="/insights" className="hover:text-[var(--color-yellow)] transition-colors">Insights</Link></li>
+              <li><Link href="/podcasts" className="hover:text-[var(--color-yellow)] transition-colors">Podcasts</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-heading font-semibold text-white mb-6 text-lg">Contact</h4>
+            <ul className="space-y-4 text-sm">
+              <li>123 Architecture Way<br/>Design District<br/>London, E1 8AB</li>
+              <li><a href="mailto:hello@wdm-architects.com" className="hover:text-[var(--color-yellow)] transition-colors">hello@wdm-architects.com</a></li>
+              <li><a href="tel:+442012345678" className="hover:text-[var(--color-yellow)] transition-colors">+44 (0)20 1234 5678</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-[var(--color-stone)]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-80">
+          <p>&copy; {new Date().getFullYear()} Why Design Matters. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
