@@ -1,0 +1,163 @@
+PHASE 6 — STUB PAGES PROMPT
+
+Build four pages with proper layout, headers and structure but placeholder content, ready to be fully populated when wireframes are provided. All design tokens and components from Phase 1 apply throughout.
+
+PROJECTS PAGE — /projects
+Section 1 — Hero
+
+Full viewport height. Graphite background, placeholder image, semi-transparent overlay. Rhombus in yellow.
+
+H1: "From vision to reality."
+Subtext: "Every project begins with a conversation and ends with a place that matters. Here is a selection of the work we are proud to have delivered."
+Fade-in on load
+
+Section 2 — Project Grid
+
+White background. Filter tab bar at the top with tabs: All / Education / Commercial / Residential / Hospitality. Tabs built with React useState — clicking a tab filters the visible cards. Default: All selected. Active tab styled with yellow underline or yellow background.
+
+Six placeholder <Card> components in a 3-column grid (desktop) / 2-column (tablet) / 1-column (mobile). Each card: placeholder image, project name placeholder, sector tag in yellow pill, location placeholder, one-line summary placeholder, "View Project →" link (stub href="#"). Cards filter by sector tag when tab is clicked.
+Section 3 — CTA Band
+
+Graphite background. White text.
+
+Title: "Have a project in mind?"
+Body: "We'd love to hear about it. Every conversation starts with listening."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+
+INSIGHTS PAGE — /insights
+Section 1 — Hero
+
+White background (not graphite — this page feels lighter and more editorial). Large editorial-style H1.
+
+H1: "Thinking beyond the building."
+Subtext: "Ideas, perspectives and conversations from the Why Design Matters team."
+No CTA on hero — let the content below speak
+
+Section 2 — Featured Article
+
+Stone background. Full-width featured card. Large placeholder image left (60% width), content right (40%). Content: tag "Featured", placeholder title, placeholder summary (2–3 sentences), author placeholder, date placeholder, "Read More →" (stub). This card sits above the main grid and should feel more prominent than the regular cards.
+Section 3 — Article Grid
+
+White background. Filter tab bar: All / Education / Commercial / Residential / Hospitality / Podcast. React useState filtering, same pattern as Projects page. Active tab yellow.
+
+Six placeholder <InsightCard> components in a 3-column grid (desktop) / 2-column (tablet) / 1-column (mobile). Each: placeholder image, category tag (mix of Article and Podcast tags across the six), placeholder title, placeholder summary, author placeholder, date placeholder, "Read More →" or "Listen Now →" depending on tag.
+Section 4 — Podcast Callout Band
+
+Graphite background. Two-column layout. Left: placeholder podcast artwork image. Right: label (small caps, yellow) "Our Podcast", title "Conversations that matter.", body "We sit down with architects, clients, educators and business leaders to explore the ideas shaping the built environment. Available wherever you listen to podcasts.", CTA: "Explore All Episodes" (primary yellow → /podcasts)
+Section 5 — CTA Band
+
+Stone background.
+
+Title: "Have a topic you'd like us to explore?"
+Body: "We're always looking for new perspectives. If you have an idea for an article or would like to be a guest on our podcast, we'd love to hear from you."
+CTA: "Get in Touch" (primary yellow → /contact)
+
+
+PODCASTS PAGE — /podcasts
+Section 1 — Hero
+
+Graphite background, placeholder image, overlay. Rhombus in yellow.
+
+H1: "Conversations that matter."
+Subtext: "We sit down with architects, clients, educators and business leaders to explore the ideas, challenges and opportunities shaping the built environment."
+Two CTAs: "Listen on Spotify" (primary yellow, stub href="#"), "Listen on Apple Podcasts" (ghost white, stub href="#")
+
+Section 2 — About the Podcast
+
+White background. Two-column layout (stacks on mobile).
+
+Left: placeholder podcast artwork/cover image
+Right: Label (small caps, yellow): "About the Show". Title: "Why Design Matters — The Podcast." Body: "Each episode explores a different aspect of architecture, design and the built environment — through honest conversations with the people who shape it. We talk about what works, what doesn't, and what great design really means for the people who experience it." Platform links as icon+text rows: Spotify (stub), Apple Podcasts (stub), Google Podcasts (stub), Amazon Music (stub)
+
+Section 3 — Latest Episodes
+
+Stone background. Title: "Latest Episodes."
+
+Four placeholder episode cards stacked vertically (not a grid — list format feels more podcast-native). Each card: episode number (small, yellow), placeholder thumbnail image (square, left-aligned), episode title placeholder, guest name placeholder, brief summary placeholder (2 sentences), duration placeholder, "Listen Now →" (stub). Cards have a subtle hover state (slight background lift).
+Section 4 — Episode Archive Teaser
+
+White background. Centred. Title: "More Episodes." Body: "We publish new episodes regularly. Browse the full archive to find conversations on the topics that matter most to you." CTA: "Browse All Episodes" (primary yellow, stub href="#" — full archive coming in future phase)
+Section 5 — CTA Band
+
+Graphite background. White text.
+
+Title: "Want to be a guest on the podcast?"
+Body: "We're always looking for interesting voices and perspectives. If you have something worth saying about design, architecture or the built environment, we'd love to have the conversation."
+CTA: "Get in Touch" (primary yellow → /contact)
+
+
+CONTACT PAGE — /contact
+Section 1 — Hero
+
+Stone background (not graphite — this page should feel approachable and warm). No full-height hero — just a contained header block.
+
+Label (small caps, yellow): "Get In Touch"
+H1: "Let's start a conversation."
+Subtext: "Every project begins with a conversation. Tell us what you're working on — we'll listen carefully and let you know how we can help."
+
+Section 2 — Contact Form + Details
+
+White background. Two-column layout (stacks on mobile — form first, details below).
+
+Left column (form): Build using React controlled components — no HTML form tags.
+
+Fields:
+
+Name (text input, required)
+Organisation (text input, optional — label: "Organisation (optional)")
+Email (email input, required)
+Phone (tel input, optional — label: "Phone (optional)")
+Project Type (select dropdown): options — Please select / New Build / Extension or Remodel / Refurbishment / Feasibility Study / Planning Application / Other
+Sector (select dropdown): options — Please select / Education / Commercial & Workplace / Residential / Hospitality / Mixed Use / Not Sure Yet
+Message (textarea, required, minimum 4 rows)
+Submit button: "Send Message" (primary yellow, full width)
+
+Validation: required fields show inline error message if submitted empty. Email field validates format. No backend — on successful validation show a success state replacing the form: title "Thank you — we'll be in touch.", body "We aim to respond to all enquiries within one working day."
+
+
+Right column (contact details):
+
+Label (small caps, yellow): "Our Studio"
+
+Address: Shire House, Birmingham Road, Lichfield, WS14 9BW
+
+Phone: 01543 886175
+
+Mobile: 07849 750 978
+
+Email: (placeholder — confirm with client)
+
+Divider line
+
+Label (small caps, yellow): "Connect"
+
+LinkedIn link (stub href="#")
+
+Google Business link (stub href="#")
+
+Divider line
+
+Label (small caps, yellow): "Working Hours"
+
+Monday – Friday: 9:00am – 5:30pm
+
+Saturday – Sunday: Closed
+
+Section 3 — Map Placeholder
+
+Stone background. Simple placeholder block styled as a map embed area (grey rectangle, correct aspect ratio). Text overlay: "Studio location — map embed to be added." Note in code as a comment: {/* Replace with Google Maps embed using client-provided API key */}
+Section 4 — Alternative CTA
+
+White background. Centred. Title: "Not ready to get in touch yet?" Body: "Explore our work, read our insights or find out more about how we approach design." Three ghost buttons in a row (stack on mobile): "Explore Our Work" → /projects, "Read Our Insights" → /insights, "Learn About Us" → /about
+
+Global rules for all pages in this phase:
+
+Fade-in on scroll for every section
+Minimum 80px vertical padding per section, 120px on desktop
+All CTAs use <Button> component from Phase 1
+Filter tabs on Projects and Insights must actually filter cards by category using React useState
+Contact form must use React controlled components — no HTML form tags
+Contact form validation must run client-side before showing success state
+Mobile-first — every page checked at 375px viewport
+Episode cards on Podcasts should feel like a list, not a grid
