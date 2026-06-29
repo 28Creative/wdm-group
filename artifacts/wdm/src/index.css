@@ -64,6 +64,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply font-sans text-base antialiased bg-[var(--color-white)] text-[var(--color-graphite)];
   }

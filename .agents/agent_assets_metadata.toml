@@ -114,3 +114,33 @@ id = "W4RrTSphykwCyNl9JconS"
 uri = "file://artifacts/wdm/public/images/about-hero.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "X_kAqCqC1i4ooSolsSTjb"
+uri = "file://attached_assets/generated_images/exterior_of_a_modern_f8ba.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "ygLmmPRtuvsTBLduq7BvF"
+uri = "file://attached_assets/generated_images/architect_reviewing_site_survey_f359.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "WsXX1Pa8jU_3jjrYY6PlT"
+uri = "file://attached_assets/generated_images/modern_architecture_firm_exterior_b45e.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Uonal7TqdvthqkPZiSZxo"
+uri = "file://attached_assets/generated_images/planning_application_submission_architec_3da8.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "4uyKY-rOahZRFF1l3zGrl"
+uri = "file://attached_assets/generated_images/sustainable_green_architecture_building_679b.png"
+type = "image"
+title = "generated_image"
