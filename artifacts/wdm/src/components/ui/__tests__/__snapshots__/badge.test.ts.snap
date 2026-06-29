@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`badgeVariants snapshots > extra className is merged into output 1`] = `"whitespace-nowrap inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover-elevate  border-transparent bg-primary text-primary-foreground shadow-xs uppercase"`;
+
+exports[`badgeVariants snapshots > no arguments uses defaultVariants 1`] = `"whitespace-nowrap inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover-elevate  border-transparent bg-primary text-primary-foreground shadow-xs"`;
+
+exports[`badgeVariants snapshots > variant="default" 1`] = `"whitespace-nowrap inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover-elevate  border-transparent bg-primary text-primary-foreground shadow-xs"`;
+
+exports[`badgeVariants snapshots > variant="destructive" 1`] = `"whitespace-nowrap inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover-elevate  border-transparent bg-destructive text-destructive-foreground shadow-xs"`;
+
+exports[`badgeVariants snapshots > variant="outline" 1`] = `"whitespace-nowrap inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover-elevate  text-foreground border [border-color:var(--badge-outline)]"`;
+
+exports[`badgeVariants snapshots > variant="secondary" 1`] = `"whitespace-nowrap inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover-elevate  border-transparent bg-secondary text-secondary-foreground"`;

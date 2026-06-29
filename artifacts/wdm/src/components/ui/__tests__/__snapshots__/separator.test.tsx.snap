@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Separator classes > horizontal orientation snapshot 1`] = `"shrink-0 bg-border h-[1px] w-full"`;
+
+exports[`Separator classes > vertical orientation snapshot 1`] = `"shrink-0 bg-border h-full w-[1px]"`;

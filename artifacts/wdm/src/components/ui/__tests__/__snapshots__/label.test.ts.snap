@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`labelVariants snapshots > default classes 1`] = `"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"`;
+
+exports[`labelVariants snapshots > extra className is merged into output 1`] = `"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-red-500"`;
