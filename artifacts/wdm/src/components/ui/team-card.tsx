@@ -7,6 +7,7 @@ interface TeamCardProps {
   role: string;
   bioExcerpt: string;
   onViewProfile?: () => void;
+  ctaLabel?: string;
   loading?: "lazy" | "eager";
   className?: string;
 }
@@ -17,6 +18,7 @@ export function TeamCard({
   role,
   bioExcerpt,
   onViewProfile,
+  ctaLabel = "View Profile",
   loading = "lazy",
   className,
 }: TeamCardProps) {
@@ -38,7 +40,7 @@ export function TeamCard({
         
         {onViewProfile && (
           <Button variant="ghost" onClick={onViewProfile} className="w-full justify-start px-0 border-none hover:bg-transparent hover:text-[var(--color-gold)] text-[var(--color-graphite)] transition-colors">
-            View Profile
+            {ctaLabel}
           </Button>
         )}
       </div>

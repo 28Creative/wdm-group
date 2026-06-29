@@ -42,7 +42,7 @@ describe("SectorCard — layout", () => {
 
   it("content column has lg:w-1/2 class", () => {
     render(<SectorCard {...defaultProps} />)
-    const heading = screen.getByRole("heading", { level: 2 })
+    const heading = screen.getByRole("heading", { level: 3 })
     expect(heading.parentElement!.className).toContain("lg:w-1/2")
   })
 
@@ -57,9 +57,9 @@ describe("SectorCard — layout", () => {
 })
 
 describe("SectorCard — content", () => {
-  it("renders title in h2", () => {
+  it("renders title in h3", () => {
     render(<SectorCard {...defaultProps} />)
-    const heading = screen.getByRole("heading", { level: 2 })
+    const heading = screen.getByRole("heading", { level: 3 })
     expect(heading).toHaveTextContent("Hospitality")
   })
 

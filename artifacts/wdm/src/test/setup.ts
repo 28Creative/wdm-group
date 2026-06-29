@@ -15,3 +15,15 @@ Object.defineProperty(window, "ResizeObserver", {
   configurable: true,
   value: MockResizeObserver,
 })
+
+class MockIntersectionObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+Object.defineProperty(window, "IntersectionObserver", {
+  writable: true,
+  configurable: true,
+  value: MockIntersectionObserver,
+})

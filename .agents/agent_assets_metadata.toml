@@ -108,3 +108,9 @@ id = "dAEhw0P48z3lGdYptrcxZ"
 uri = "file://artifacts/wdm/public/images/insight-3.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "W4RrTSphykwCyNl9JconS"
+uri = "file://artifacts/wdm/public/images/about-hero.png"
+type = "image"
+title = "generated_image"

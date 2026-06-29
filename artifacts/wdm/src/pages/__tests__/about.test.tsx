@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react"
 import { describe, it, expect, vi } from "vitest"
-import About, { TEAM_MEMBERS } from "../about"
+import About, { DIRECTORS } from "../about"
 
 vi.mock("wouter", () => ({
   Link: ({ href, children, className }: {
@@ -11,60 +11,73 @@ vi.mock("wouter", () => ({
   useLocation: () => ["/about"],
 }))
 
-describe("About page — team grid", () => {
+// Radix UI Dialog uses portals — stub it so content renders inline in tests
+vi.mock("@radix-ui/react-dialog", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@radix-ui/react-dialog")>()
+  return {
+    ...actual,
+    Portal: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+  }
+})
+
+describe("About page — full build", () => {
   it("mounts without throwing", () => {
     expect(() => render(<About />)).not.toThrow()
   })
 
-  it("renders the page heading", () => {
+  it("renders the hero heading", () => {
     render(<About />)
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("About Us")
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
+      "Design that starts with people."
+    )
   })
 
   it("renders the team section heading", () => {
     render(<About />)
-    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("The Team")
+    expect(
+      screen.getByText(/Behind every project is a team that genuinely cares/)
+    ).toBeInTheDocument()
   })
 
-  it("renders one TeamCard per team member", () => {
+  it("renders one TeamCard per director", () => {
     render(<About />)
     const grid = screen.getByTestId("team-grid")
     const cards = within(grid).getAllByRole("heading", { level: 4 })
-    expect(cards).toHaveLength(TEAM_MEMBERS.length)
+    expect(cards).toHaveLength(DIRECTORS.length)
   })
 
-  it("renders each member's name", () => {
+  it("renders each director's name", () => {
     render(<About />)
-    for (const member of TEAM_MEMBERS) {
-      expect(screen.getByText(member.name)).toBeInTheDocument()
+    for (const director of DIRECTORS) {
+      expect(screen.getByText(director.name)).toBeInTheDocument()
     }
   })
 
-  it("renders each member's role", () => {
+  it("renders each director's role", () => {
     render(<About />)
-    for (const member of TEAM_MEMBERS) {
-      expect(screen.getByText(member.role)).toBeInTheDocument()
+    for (const director of DIRECTORS) {
+      expect(screen.getAllByText(director.role).length).toBeGreaterThan(0)
     }
   })
 
-  it("renders each member's bio excerpt", () => {
+  it("renders each director's bio excerpt in the card", () => {
     render(<About />)
-    for (const member of TEAM_MEMBERS) {
-      expect(screen.getByText(member.bioExcerpt)).toBeInTheDocument()
+    for (const director of DIRECTORS) {
+      expect(screen.getByText(director.bioExcerpt)).toBeInTheDocument()
     }
   })
 
-  it("renders member images with correct alt text", () => {
+  it("renders director images with correct alt text", () => {
     render(<About />)
-    for (const member of TEAM_MEMBERS) {
-      expect(screen.getByAltText(member.name)).toBeInTheDocument()
+    for (const director of DIRECTORS) {
+      expect(screen.getAllByAltText(director.name).length).toBeGreaterThan(0)
     }
   })
 
-  it("first member image loads eagerly, rest lazily", () => {
+  it("first director image loads eagerly, rest lazily", () => {
     render(<About />)
     const images = screen.getAllByRole("img").filter(
-      (img) => TEAM_MEMBERS.some((m) => m.name === img.getAttribute("alt"))
+      (img) => DIRECTORS.some((d) => d.name === img.getAttribute("alt"))
     )
     expect(images[0]).toHaveAttribute("loading", "eager")
     for (const img of images.slice(1)) {
@@ -72,7 +85,17 @@ describe("About page — team grid", () => {
     }
   })
 
-  it("grid still renders correctly when TEAM_MEMBERS has content", () => {
+  it("renders a 'Read [Name]'s Story' button for each director", () => {
+    render(<About />)
+    for (const director of DIRECTORS) {
+      const firstName = director.name.split(" ")[0]
+      expect(
+        screen.getByRole("button", { name: new RegExp(`Read ${firstName}'s Story`, "i") })
+      ).toBeInTheDocument()
+    }
+  })
+
+  it("team grid still renders correctly", () => {
     render(<About />)
     const grid = screen.getByTestId("team-grid")
     expect(grid).toBeInTheDocument()
@@ -92,5 +115,28 @@ describe("About page — team grid", () => {
   it("has a main content area", () => {
     render(<About />)
     expect(screen.getByRole("main")).toBeInTheDocument()
+  })
+
+  it("renders the Our Story label", () => {
+    render(<About />)
+    expect(screen.getByText("Our Story")).toBeInTheDocument()
+  })
+
+  it("renders the WDM Difference section title", () => {
+    render(<About />)
+    expect(screen.getByText("What Makes Us Different")).toBeInTheDocument()
+  })
+
+  it("renders the CTA box heading", () => {
+    render(<About />)
+    expect(screen.getByText("Ready to discuss your project?")).toBeInTheDocument()
+  })
+
+  it("renders a primary CTA linking to /contact", () => {
+    render(<About />)
+    const contactLinks = screen.getAllByRole("link").filter(
+      (a) => a.getAttribute("href") === "/contact"
+    )
+    expect(contactLinks.length).toBeGreaterThan(0)
   })
 })
