@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SectorCard — layout > renders with base layout classes 1`] = `"flex flex-col lg:flex-row gap-8 lg:gap-16 items-center"`;
