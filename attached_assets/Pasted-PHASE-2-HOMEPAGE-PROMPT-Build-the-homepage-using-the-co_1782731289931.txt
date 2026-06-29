@@ -1,0 +1,91 @@
+PHASE 2 — HOMEPAGE PROMPT
+
+Build the homepage (/) using the component library from Phase 1. All sections must use the established design tokens — no new colours, no new fonts, no inline styles.
+Section 1 — Hero
+
+Full viewport height. Background: dark graphite (--color-graphite) with a large placeholder image behind a semi-transparent overlay. Rhombus brand shape used as a decorative element (subtle, background layer, yellow).
+
+H1: "Design matters because places shape people."
+Subtext: "We create thoughtful architecture that considers how people live, learn, work and connect."
+Two CTAs side by side: "Start a Conversation" (primary yellow button → /contact), "Explore Our Work" (ghost button → /projects)
+Subtle fade-in on load for H1 and subtext (staggered, 0.2s delay between elements)
+
+Section 2 — Why Design Matters Intro
+
+Two-column layout (stacks to single column on mobile). Stone background (--color-stone).
+
+Left column: body copy block — "Design matters because the spaces we inhabit shape the way we feel, think, work and connect. Whether we are aware of it or not, the environments around us influence our mood, our behaviour and our sense of belonging." Followed by bold italic callout: "How can this place improve the lives of the people who use it?"
+Right column: 3-card icon grid labelled "How We Think". Cards: "Design for People" (placeholder icon, body: "Every decision begins with the people who will use the space — their needs, their routines, their wellbeing."), "Places That Perform" (placeholder icon, body: "Great spaces do more than look impressive. They support the activities that happen within them."), "Connected Thinking" (placeholder icon, body: "Architecture doesn't exist in isolation. We consider context, community and long-term impact in everything we do.")
+
+Section 3 — Full-Width Image Band
+
+Use <ImageBand> component. Dark overlay. Placeholder image.
+
+Text overlay: "At Why Design Matters, we create environments that perform — for the people who use them, the organisations that run them, and the communities they serve."
+Two CTAs: "Start a Conversation" (primary → /contact), "Explore Our Work" (ghost → /projects)
+
+Section 4 — Sector Grid
+
+White background. Title: "Expertise That Starts with Understanding". Intro line: "Every sector brings its own culture, challenges and expectations. Our work begins with understanding what makes each one unique."
+
+Four sector cards in a 2x2 grid (desktop) / stacked (mobile) using <SectorCard> component:
+
+Education: "Spaces that support learning, wellbeing and community." → /sector/education
+Commercial & Workplace: "Environments that help organisations and their people thrive." → /sector/commercial
+Residential: "Homes and developments that reflect how people want to live." → /sector/residential
+Hospitality: "Experience-led spaces that connect with guests and create lasting impressions." → /sector/hospitality
+
+Each card: placeholder image, title, descriptor, "Explore →" CTA.
+
+Section 5 — Projects Strip
+
+Stone background. Title: "From vision to reality." Subtitle: "Every project begins with a conversation and ends with a place that matters."
+
+Three project cards side by side (horizontal scroll on mobile). Each <Card> component: placeholder image (rhombus clip option), placeholder project name, placeholder sector tag in yellow, placeholder one-line summary, "View Project →" link (stub href="#").
+
+"View All Projects →" text link below → /projects
+Section 6 — Meet the Team
+
+White background. Title: "Three perspectives. One belief."
+
+Intro: "Martin, Simon and Parminder bring different strengths to every project. What they share is a commitment to design that begins with listening."
+
+Three <TeamCard> components in a row (stacks to single column on mobile):
+
+Martin Beaumont — Director | Architect — "Martin leads every project with a listening-first approach, taking time to understand what clients and communities truly need before a single line is drawn." — greyscale photo placeholder → colour on hover
+Simon Jesson — Director | Architect — "Simon translates ideas into buildable, deliverable solutions — bridging the gap between creative ambition and practical reality."
+Parminder Degan — Director | Architect — "Parminder designs from the inside out, considering how spaces feel to the people who move through them every day."
+
+"Meet The Team →" text link → /about
+
+Section 7 — Insights Strip
+
+Stone background. Title: "Thinking beyond the building."
+
+Intro: "Our insights explore the ideas, challenges and conversations that shape great design."
+
+Three cards in a row (2 article cards + 1 podcast card). Each uses <InsightCard> component:
+
+Card 1: placeholder image, tag "Article", placeholder title, placeholder summary, "Read More →" (stub)
+Card 2: placeholder image, tag "Article", placeholder title, placeholder summary, "Read More →" (stub)
+Card 3: placeholder image, tag "Podcast", placeholder title, placeholder summary, "Listen Now →" (stub)
+
+"Explore All Insights →" text link → /insights
+
+Section 8 — Final CTA Band
+
+Full-width. Yellow background (--color-yellow). Graphite text.
+
+Title: "Let's Create Something That Matters"
+Body: "Every place tells a story. We'd love to help you tell yours. Whether you have a brief ready or an idea you're still shaping, the conversation starts here."
+CTA: "Start a Conversation" (secondary graphite button → /contact)
+Rhombus brand shape used as decorative background element (graphite, low opacity)
+
+Global rules for this page:
+
+Fade-in on scroll for each section using Intersection Observer (already set up in Phase 1)
+No section should feel cramped — minimum 80px vertical padding per section, 120px on desktop
+All CTAs must use the <Button> component from Phase 1, never a raw anchor styled as a button
+Mobile-first — every section must be checked at 375px viewport width
+
+
