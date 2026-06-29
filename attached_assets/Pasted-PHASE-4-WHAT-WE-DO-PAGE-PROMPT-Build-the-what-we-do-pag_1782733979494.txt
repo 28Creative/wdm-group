@@ -1,0 +1,138 @@
+PHASE 4 — WHAT WE DO PAGE PROMPT
+
+Build the /what-we-do page using the component library from Phase 1. All design tokens apply — no new colours, no inline styles.
+Section 1 — Hero
+
+Full viewport height. Graphite background with placeholder image behind semi-transparent overlay. Rhombus decorative element in yellow (background layer).
+
+H1: "Creating places that perform for people."
+Subtext: "Architecture is more than buildings. It is about understanding what people need from a place — and designing environments that deliver it."
+Two CTAs: "Start a Conversation" (primary yellow → /contact), "Explore Our Sectors" (ghost → /sector-expertise)
+Staggered fade-in on load
+
+Section 2 — More Than Architecture
+
+White background. Two-column layout (stacks on mobile). Max-width 1280px.
+
+Left column label (small caps, yellow): "Our Approach"
+Left column body: "Architecture is often understood as the design of buildings. At Why Design Matters, we see it differently. Our role is to understand what a place needs to achieve — for the people who use it, the organisation that runs it, and the community it serves — and to create environments that deliver on that purpose with clarity, creativity and confidence."
+Right column body: "Every project begins with questions. What is this place for? Who will use it? What does success look like in five years? What constraints exist and how can they become opportunities? The answers shape a design process that is grounded in evidence, guided by empathy and delivered with technical precision."
+
+Section 3 — RIBA Plan of Work
+
+Stone background. Two-column layout (stacks on mobile).
+
+Left column: Vertical RIBA stage timeline built in CSS/SVG. 8 stages displayed as connected vertical steps with yellow connector line and graphite stage circles:
+
+Stage 0: Strategic Definition
+Stage 1: Preparation & Briefing
+Stage 2: Concept Design
+Stage 3: Spatial Coordination
+Stage 4: Technical Design
+Stage 5: Manufacturing & Construction
+Stage 6: Handover
+Stage 7: Use
+
+
+Right column: Title: "How We Work Through a Project". Body: "We follow the RIBA Plan of Work — the industry-standard framework for delivering architecture projects. It gives our clients a clear understanding of what happens at each stage, what decisions need to be made, and what to expect as the project progresses." Two text links below: "Explore our guide to the RIBA Plan of Work" (stub href="#"), "View our FAQs" (smooth scroll anchor → #faq)
+
+Section 4 — Services (Four Alternating Blocks)
+
+White background. Each block alternates: image left/text right, then image right/text left. Full width. Placeholder image each block. On mobile all blocks stack image above text.
+Block 1 — Image Left / Text Right:
+
+Label (small caps, yellow): "Architecture & Design"
+Title: "From concept to completion — architecture that works."
+Body: "Our architecture and design service covers the full journey from initial concept through to completed building. We bring together spatial thinking, technical expertise and an understanding of how people use space to create environments that are inspiring, practical and built to last."
+Checklist (yellow tick icons): Full RIBA stage delivery / Concept and schematic design / Detailed technical design / Specification and procurement support / Construction monitoring and contract administration / Post-occupancy review
+Italic closing line: "Every line we draw begins with a question: will this work for the people who use it?"
+
+Block 2 — Image Right / Text Left:
+
+Label: "Feasibility & Development Insight"
+Title: "Understanding what's possible before committing to what's next."
+Body: "Before committing to a project, organisations and developers need confidence that their ambitions are achievable. Our feasibility work explores what a site or brief can realistically deliver — testing assumptions, identifying constraints and revealing opportunities that may not be immediately obvious."
+Checklist: Site appraisal and capacity studies / Use and massing options / Planning risk assessment / Development viability input / Programme and phasing advice / Brief development and refinement
+Italic closing line: "Good feasibility work doesn't just test whether something is possible. It shapes what becomes possible."
+
+Block 3 — Image Left / Text Right:
+
+Label: "Planning & Project Navigation"
+Title: "Navigating complexity with clarity and confidence."
+Body: "Planning is one of the most complex and consequential stages of any project. We guide clients through the process with clarity — managing applications, coordinating consultants and communicating with planning authorities to keep projects moving and ambitions intact."
+Checklist: Pre-application engagement / Planning application preparation and submission / Design and access statements / Listed building and conservation area applications / Consultant coordination / Appeal support where required
+Italic closing line: "We don't just submit applications. We build the case for great design."
+
+Block 4 — Image Right / Text Left:
+
+Label: "Sustainable & Responsible Design"
+Title: "Design that considers its impact — on people, place and planet."
+Body: "Sustainability is not a feature to be added at the end of a project. It is a principle that should shape every decision from the earliest stages. We integrate environmental thinking into our design process — considering energy, materials, ecology and long-term performance alongside function, form and experience."
+Checklist: Passive design strategies / Natural light and ventilation / Biophilic design principles / Material selection and embodied carbon / Energy performance and compliance / Ecology and landscape integration
+Italic closing line: "The most sustainable building is one that people love enough to look after."
+
+Section 5 — Credentials Strip
+
+Stone background. Title: "Expertise You Can Trust."
+
+Intro: "Our work is underpinned by professional accreditation, sector experience and a track record of delivering projects that perform."
+
+Two columns side by side (stacks on mobile):
+
+Left — "Professional Credentials": RIBA Chartered Practice / ARB Registered Architects / Martin Beaumont RIBA / Simon Jesson RIBA / Parminder Degan RIBA / RIBA Plan of Work practitioners / Professional indemnity insured
+Right — "Sectors We Serve": Education / Commercial & Workplace / Residential / Hospitality / Community & Public Realm / Mixed-use Development
+
+Both lists use yellow tick icons. Clean two-column layout.
+
+Section 6 — How We Work Process Bar
+
+White background. Title: "How We Work"
+
+Intro: "Every project is different. Our process is designed to adapt — while keeping people, purpose and place at the centre of every decision."
+
+Five-step horizontal process bar (desktop) / vertical stack (mobile). Each step connected by a yellow line. Use <ProcessStep> component:
+
+Step 1 — Listen: "We start by understanding — your organisation, your users, your ambitions and your constraints."
+Step 2 — Explore: "We test ideas, challenge assumptions and explore what's genuinely possible within your context."
+Step 3 — Design: "We develop a design that is creative, considered and grounded in everything we've learned."
+Step 4 — Deliver: "We guide the project through planning, procurement and construction with clarity and care."
+Step 5 — Evolve: "We review how the completed space performs and remain available as your needs change over time."
+
+Section 7 — CTA Band
+
+Full-width. Graphite background. White text. Rhombus decorative shape in yellow (low opacity, background).
+
+Title: "Creative Thinking. Technical Expertise. Trusted Delivery."
+Body: "Whatever stage your project is at — from early idea to planning application — we're ready to listen and help you move forward with confidence."
+CTA: "Start a Conversation" (primary yellow button → /contact)
+
+Section 8 — FAQ Accordion
+
+ID: faq (for smooth scroll anchor from Section 3).
+
+Stone background. Title: "Frequently Asked Questions."
+
+Intro: "Some of the questions we're asked most often — answered honestly."
+
+Build using native React useState toggle — no external library. Each item: question as clickable header with yellow chevron icon that rotates on open, answer as collapsible body. Only one item open at a time.
+FAQ items:
+
+"Do I need an architect?" — "Not every project legally requires one — but most benefit from one. An architect brings design thinking, technical knowledge and project management together in a way that typically adds more value than it costs. We're happy to have an honest conversation about whether appointment is right for your project."
+"How much does an architect cost?" — "Fees vary depending on the scope, scale and complexity of the project. We typically work on a percentage of construction cost for full-service appointments, or a fixed fee for defined pieces of work such as feasibility studies or planning applications. We're transparent about fees from the first conversation."
+"How long does the process take?" — "It depends on the project. A straightforward planning application might take three to six months. A larger project from initial briefing to completion could take two to four years. We'll give you a realistic programme from the outset and keep you informed as it evolves."
+"What is the RIBA Plan of Work?" — "The RIBA Plan of Work is the industry-standard framework for organising and managing the design and construction process. It runs from Stage 0 (Strategic Definition) through to Stage 7 (Use). It gives clients a clear map of the journey ahead and helps everyone understand what decisions need to be made and when."
+"Do you handle planning applications?" — "Yes. Planning is a core part of our service. We prepare and submit applications, write design and access statements, engage with planning officers and coordinate with any specialist consultants required. We also support clients through appeals where necessary."
+"Can you help if I already have planning permission?" — "Yes. Some clients come to us after planning has been granted — perhaps to develop the technical design, manage the tender process or administer the construction contract. We're happy to join a project at whatever stage makes sense."
+"Do you work with residential clients?" — "Yes. We work across residential, commercial, education and hospitality sectors. Whether you're extending your home, developing a site or creating a new building, we bring the same thoughtful, listening-led approach to every project."
+"What areas do you cover?" — "Our studio is based in Lichfield, Staffordshire, and we work across the Midlands and beyond. We're happy to discuss projects further afield where the fit is right."
+"How do I get started?" — "The simplest way is to get in touch and tell us what you're working on. We'll have an initial conversation — no obligation, no jargon — to understand your project and whether we're the right fit. From there we can outline next steps and how we might work together."
+
+Global rules for this page:
+
+Fade-in on scroll for each section
+Minimum 80px vertical padding per section, 120px on desktop
+All CTAs use the <Button> component from Phase 1
+Smooth scroll behaviour on the "View our FAQs" anchor link
+FAQ: only one item open at a time, chevron animates on open/close
+Mobile-first — check at 375px viewport width
+Alternating service blocks must stack cleanly on mobile with image above text every time
