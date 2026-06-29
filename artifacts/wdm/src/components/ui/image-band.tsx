@@ -4,16 +4,19 @@ import { cn } from "@/lib/utils";
 interface ImageBandProps {
   imageSrc: string;
   imageAlt?: string;
+  loading?: "lazy" | "eager";
   className?: string;
   children?: ReactNode;
 }
 
-export function ImageBand({ imageSrc, imageAlt = "", className, children }: ImageBandProps) {
+export function ImageBand({ imageSrc, imageAlt = "", loading = "lazy", className, children }: ImageBandProps) {
   return (
     <div className={cn("relative w-full h-[60vh] min-h-[400px] overflow-hidden group", className)}>
       <img
         src={imageSrc}
         alt={imageAlt}
+        loading={loading}
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover hover-image-zoom transition-transform duration-700 ease-out"
       />
       <div className="absolute inset-0 bg-black/40 transition-colors group-hover:bg-black/50" />

@@ -11,6 +11,7 @@ interface CardProps {
   ctaText?: string;
   ctaHref?: string;
   useRhombusClip?: boolean;
+  loading?: "lazy" | "eager";
   className?: string;
 }
 
@@ -22,6 +23,7 @@ export function Card({
   ctaText,
   ctaHref,
   useRhombusClip,
+  loading = "lazy",
   className,
 }: CardProps) {
   return (
@@ -31,6 +33,8 @@ export function Card({
           <img
             src={imageSrc}
             alt={imageAlt}
+            loading={loading}
+            decoding="async"
             className={cn(
               "w-full h-64 object-cover hover-image-zoom transition-transform duration-500 ease-out",
               useRhombusClip && "clip-path-rhombus"

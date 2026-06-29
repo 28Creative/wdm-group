@@ -184,7 +184,7 @@ export default function Home() {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="flex flex-col md:flex-row gap-8 mt-6">
-                      <img src="/images/team-1.png" alt="James Sterling" className="w-full md:w-1/3 aspect-[3/4] object-cover grayscale-transition" />
+                      <img src="/images/team-1.png" alt="James Sterling" loading="lazy" decoding="async" className="w-full md:w-1/3 aspect-[3/4] object-cover grayscale-transition" />
                       <div className="w-full md:w-2/3 space-y-4 body">
                         <p>James founded WDM with a singular vision: to create architecture that fundamentally respects and elevates the human experience.</p>
                         <p>His award-winning work spans three continents, focusing primarily on civic and educational institutions where public gathering spaces are critical.</p>
@@ -213,7 +213,7 @@ export default function Home() {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="flex flex-col md:flex-row gap-8 mt-6">
-                      <img src="/images/team-2.png" alt="Elena Rostova" className="w-full md:w-1/3 aspect-[3/4] object-cover grayscale-transition" />
+                      <img src="/images/team-2.png" alt="Elena Rostova" loading="lazy" decoding="async" className="w-full md:w-1/3 aspect-[3/4] object-cover grayscale-transition" />
                       <div className="w-full md:w-2/3 space-y-4 body">
                         <p>Elena's meticulous approach to detailing and material selection defines the WDM interior aesthetic.</p>
                         <p>She leads the studio's research into acoustic properties of natural materials and their psychological impact on users.</p>

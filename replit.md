@@ -1,44 +1,46 @@
-# [Project name]
+# Why Design Matters
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+The marketing and portfolio site for WDM, an architecture firm whose work demonstrates why design matters for human experience.
 
 ## Run & Operate
 
+- `pnpm --filter @workspace/wdm run dev` — run the WDM web app (port assigned by workflow)
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: React + Vite + Tailwind CSS (`artifacts/wdm`)
+- Router: wouter (centralized in `artifacts/wdm/src/App.tsx` — do not scatter routes)
+- API: Express 5 (`artifacts/api-server`)
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Design tokens (colors, type scale): `artifacts/wdm/src/index.css`
+- All routes: `artifacts/wdm/src/App.tsx`
+- Shared components: `artifacts/wdm/src/components/ui/`
+- Page stubs: `artifacts/wdm/src/pages/`
+- Brand rhombus: `artifacts/wdm/src/components/brand/Rhombus.tsx`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
-
-## Product
-
-_Describe the high-level user-facing capabilities of this app once they exist._
+- **Design tokens as CSS custom properties** — all colors and typography use `var(--color-*)` and `var(--font-*)`. No hardcoded hex/font values in component code.
+- **Wouter for routing** — lightweight alternative to React Router; all routes live in a single `App.tsx` file for manageability.
+- **Image components are the single source of truth for image rendering** — all `<img>` tags flow through shared components (Card, ImageBand, TeamCard, SectorCard, InsightCard). Add image-related changes there, not inline.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- No emojis in the UI. Use lucide-react for icons.
+- No heavy scroll animations, no parallax, no elements moving without user interaction.
+- Routing stays in wouter (confirmed decision — not switching to React Router).
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- **Images require manual lazy loading** — there is no Next.js `<Image>` component in Vite. Every `<img>` must include `loading="lazy"` and `decoding="async"`. Both are already defaulted in all shared image components. Use `loading="eager"` only for the primary above-the-fold image on a page.
+- Do not run `pnpm dev` at the workspace root — individual artifacts run via workflows.
+- Do not add new routes as standalone files; wire them in `App.tsx`.
 
 ## Pointers
 

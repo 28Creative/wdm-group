@@ -7,6 +7,7 @@ interface TeamCardProps {
   role: string;
   bioExcerpt: string;
   onViewProfile?: () => void;
+  loading?: "lazy" | "eager";
   className?: string;
 }
 
@@ -16,6 +17,7 @@ export function TeamCard({
   role,
   bioExcerpt,
   onViewProfile,
+  loading = "lazy",
   className,
 }: TeamCardProps) {
   return (
@@ -24,6 +26,8 @@ export function TeamCard({
         <img
           src={imageSrc}
           alt={name}
+          loading={loading}
+          decoding="async"
           className="w-full h-full object-cover grayscale-transition"
         />
       </div>

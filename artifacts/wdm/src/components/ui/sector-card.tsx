@@ -9,6 +9,7 @@ interface SectorCardProps {
   descriptor: string;
   features: string[];
   ctaHref: string;
+  loading?: "lazy" | "eager";
   className?: string;
 }
 
@@ -18,6 +19,7 @@ export function SectorCard({
   descriptor,
   features,
   ctaHref,
+  loading = "lazy",
   className,
 }: SectorCardProps) {
   return (
@@ -26,6 +28,8 @@ export function SectorCard({
         <img
           src={imageSrc}
           alt={title}
+          loading={loading}
+          decoding="async"
           className="w-full aspect-[4/3] object-cover hover-image-zoom transition-transform duration-700"
         />
       </div>

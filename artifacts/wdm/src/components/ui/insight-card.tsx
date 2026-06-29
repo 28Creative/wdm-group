@@ -8,6 +8,7 @@ interface InsightCardProps {
   title: string;
   summary: string;
   href: string;
+  loading?: "lazy" | "eager";
   className?: string;
 }
 
@@ -17,6 +18,7 @@ export function InsightCard({
   title,
   summary,
   href,
+  loading = "lazy",
   className,
 }: InsightCardProps) {
   return (
@@ -25,6 +27,8 @@ export function InsightCard({
         <img
           src={imageSrc}
           alt={title}
+          loading={loading}
+          decoding="async"
           className="w-full aspect-[16/9] object-cover hover-image-zoom transition-transform duration-500"
         />
       </div>
