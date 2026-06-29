@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -5,226 +6,358 @@ import { Card } from "@/components/ui/card-custom";
 import { ImageBand } from "@/components/ui/image-band";
 import { TeamCard } from "@/components/ui/team-card";
 import { SectorCard } from "@/components/ui/sector-card";
-import { ProcessStep } from "@/components/ui/process-step";
 import { InsightCard } from "@/components/ui/insight-card";
 import { Button } from "@/components/ui/button";
 import { Rhombus } from "@/components/brand/Rhombus";
 import { FadeIn } from "@/components/ui/fade-in";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
-import { PencilRuler } from "lucide-react";
+import { Users, Building2, Network } from "lucide-react";
+
+const HOW_WE_THINK = [
+  {
+    icon: <Users className="w-5 h-5" />,
+    title: "Design for People",
+    body: "Every decision begins with the people who will use the space — their needs, their routines, their wellbeing.",
+  },
+  {
+    icon: <Building2 className="w-5 h-5" />,
+    title: "Places That Perform",
+    body: "Great spaces do more than look impressive. They support the activities that happen within them.",
+  },
+  {
+    icon: <Network className="w-5 h-5" />,
+    title: "Connected Thinking",
+    body: "Architecture doesn't exist in isolation. We consider context, community and the wider world in every project.",
+  },
+];
+
+const SECTORS = [
+  { image: "/images/sector-education.png", title: "Education", descriptor: "Spaces that support learning, wellbeing and community.", href: "/sector/education" },
+  { image: "/images/sector-commercial.png", title: "Commercial & Workplace", descriptor: "Environments that help organisations and their people thrive.", href: "/sector/commercial" },
+  { image: "/images/sector-residential.png", title: "Residential", descriptor: "Homes and developments that reflect how people want to live.", href: "/sector/residential" },
+  { image: "/images/sector-hospitality.png", title: "Hospitality", descriptor: "Experience-led spaces that connect with guests and create lasting impressions.", href: "/sector/hospitality" },
+];
+
+const PROJECTS = [
+  { image: "/images/project-1.png", title: "The Marlowe Library", tag: "Education", summary: "A new community library that redefines public gathering for the post-pandemic era." },
+  { image: "/images/project-2.png", title: "Halcyon Works", tag: "Commercial", summary: "A 1970s office building transformed into a human-centred workplace for a growing consultancy." },
+  { image: "/images/project-3.png", title: "The Granary Quarter", tag: "Residential", summary: "Twelve homes that balance individual privacy with shared outdoor living." },
+];
+
+const TEAM = [
+  {
+    image: "/images/team-1.png",
+    name: "Martin Beaumont",
+    role: "Director | Architect",
+    bio: "Martin leads every project with a listening-first approach, taking time to understand what clients and communities truly need before a single line is drawn.",
+    loading: "eager" as const,
+  },
+  {
+    image: "/images/team-2.png",
+    name: "Simon Jesson",
+    role: "Director | Architect",
+    bio: "Simon translates ideas into buildable, deliverable solutions — bridging the gap between creative ambition and practical reality.",
+    loading: "lazy" as const,
+  },
+  {
+    image: "/images/team-3.png",
+    name: "Parminder Degan",
+    role: "Director | Architect",
+    bio: "Parminder designs from the inside out, considering how spaces feel to the people who move through them every day.",
+    loading: "lazy" as const,
+  },
+];
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      
-      <main className="flex-grow pt-24">
-        <SectionWrapper background="graphite">
-          <FadeIn>
-            <div className="py-20 md:py-32 max-w-4xl">
-              <Rhombus className="text-[var(--color-yellow)] w-12 h-12 mb-8" />
-              <h1 className="text-[var(--color-white)] mb-6">Design System & Component Library</h1>
-              <p className="lead text-[var(--color-stone)]">
-                Foundation phase for Why Design Matters (WDM). A preview of the typographic hierarchy, color palette, and reusable architectural components.
+
+      <main className="flex-grow">
+
+        {/* ── Section 1: Hero ────────────────────────────────────────── */}
+        <section className="relative h-screen min-h-[640px] bg-[var(--color-graphite)] flex items-center overflow-hidden">
+          <img
+            src="/images/hero.png"
+            alt=""
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[var(--color-graphite)]/65" />
+          {/* Decorative rhombus */}
+          <Rhombus
+            aria-hidden="true"
+            className="absolute -right-16 bottom-0 w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] text-[var(--color-yellow)] opacity-[0.06] pointer-events-none"
+          />
+
+          <div className="relative z-10 w-full mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16 pt-24">
+            <div className="max-w-3xl">
+              <div className="hero-fade-1">
+                <Rhombus className="text-[var(--color-yellow)] w-8 h-8 mb-8" />
+              </div>
+              <h1 className="text-[var(--color-white)] mb-6 hero-fade-2">
+                Design matters because places shape people.
+              </h1>
+              <p className="lead text-[var(--color-stone)] mb-10 max-w-xl hero-fade-3">
+                We create thoughtful architecture that considers how people live, learn, work and connect.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 hero-fade-4">
+                <Button variant="primary" size="lg" asChild>
+                  <Link href="/contact">Start a Conversation</Link>
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  asChild
+                  className="border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-[var(--color-graphite)]"
+                >
+                  <Link href="/projects">Explore Our Work</Link>
+                </Button>
+              </div>
             </div>
-          </FadeIn>
-        </SectionWrapper>
+          </div>
+        </section>
 
-        <SectionWrapper background="white">
+        {/* ── Section 2: Why Design Matters Intro ────────────────────── */}
+        <SectionWrapper background="stone" className="py-20 md:py-[120px]">
           <FadeIn>
-            <div className="mb-16">
-              <h2 className="mb-4">Colors & Typography</h2>
-              <div className="w-20 h-1 bg-[var(--color-yellow)] mb-12"></div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+              {/* Left */}
+              <div className="space-y-8">
+                <p className="lead text-[var(--color-graphite)]">
+                  Design matters because the spaces we inhabit shape the way we feel, think, work and connect. Whether we are aware of it or not, the environments around us influence our mood, our behaviour and our sense of belonging.
+                </p>
+                <blockquote className="border-l-4 border-[var(--color-yellow)] pl-6 mt-4">
+                  <p className="text-xl font-bold italic text-[var(--color-graphite)] leading-relaxed">
+                    "How can this place improve the lives of the people who use it?"
+                  </p>
+                </blockquote>
+              </div>
+
+              {/* Right — How We Think */}
               <div>
-                <h4 className="mb-6 border-b pb-2">Color Palette</h4>
+                <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-gold)] mb-8">
+                  How We Think
+                </p>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4"><div className="w-16 h-16 bg-[var(--color-graphite)] border"></div><div className="font-mono text-sm">--color-graphite</div></div>
-                  <div className="flex items-center gap-4"><div className="w-16 h-16 bg-[var(--color-stone)] border"></div><div className="font-mono text-sm">--color-stone</div></div>
-                  <div className="flex items-center gap-4"><div className="w-16 h-16 bg-[var(--color-yellow)] border"></div><div className="font-mono text-sm">--color-yellow</div></div>
-                  <div className="flex items-center gap-4"><div className="w-16 h-16 bg-[var(--color-gold)] border"></div><div className="font-mono text-sm">--color-gold</div></div>
+                  {HOW_WE_THINK.map(({ icon, title, body }) => (
+                    <div key={title} className="flex gap-4 p-6 bg-[var(--color-white)]">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[var(--color-yellow)] flex items-center justify-center text-[var(--color-graphite)]">
+                        {icon}
+                      </div>
+                      <div>
+                        <h5 className="font-heading font-semibold text-base mb-1 text-[var(--color-graphite)]">
+                          {title}
+                        </h5>
+                        <p className="text-sm leading-relaxed text-[var(--color-graphite)]/75">{body}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              
-              <div>
-                <h4 className="mb-6 border-b pb-2">Typography</h4>
-                <div className="space-y-6">
-                  <div><h1 className="text-4xl">Heading 1</h1><span className="font-mono text-xs text-gray-500">Montserrat Bold</span></div>
-                  <div><h2 className="text-3xl">Heading 2</h2><span className="font-mono text-xs text-gray-500">Montserrat SemiBold</span></div>
-                  <div><h3 className="text-2xl">Heading 3</h3><span className="font-mono text-xs text-gray-500">Montserrat SemiBold</span></div>
-                  <div><p className="lead">Lead paragraph text. Roboto Regular 18px. Because architecture is fundamentally about the human impact of the spaces we inhabit.</p></div>
-                  <div><p className="body">Body paragraph text. Roboto Regular 16px. We care about precise grids, generous whitespace, strong typographic hierarchy, and the restrained use of our signature yellow.</p></div>
-                </div>
-              </div>
             </div>
           </FadeIn>
         </SectionWrapper>
 
-        <SectionWrapper background="stone">
+        {/* ── Section 3: Full-Width Image Band ───────────────────────── */}
+        <ImageBand
+          imageSrc="/images/band.png"
+          imageAlt="WDM project interior"
+          className="h-[70vh] min-h-[480px]"
+        >
           <FadeIn>
-            <div className="mb-16">
-              <h2 className="mb-4">Buttons</h2>
-              <div className="w-20 h-1 bg-[var(--color-yellow)] mb-12"></div>
+            <p className="lead text-[var(--color-white)] mb-8 max-w-2xl">
+              At Why Design Matters, we create environments that perform — for the people who use them, the organisations that run them, and the communities they serve.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="primary" size="lg" asChild>
+                <Link href="/contact">Start a Conversation</Link>
+              </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                asChild
+                className="border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-[var(--color-graphite)]"
+              >
+                <Link href="/projects">Explore Our Work</Link>
+              </Button>
             </div>
-            <div className="flex flex-wrap gap-6">
-              <Button variant="primary">Primary Button</Button>
-              <Button variant="secondary">Secondary Button</Button>
-              <Button variant="ghost">Ghost Button</Button>
-            </div>
-          </FadeIn>
-        </SectionWrapper>
-
-        <SectionWrapper background="white">
-          <FadeIn>
-            <div className="mb-16">
-              <h2 className="mb-4">Cards & Teasers</h2>
-              <div className="w-20 h-1 bg-[var(--color-yellow)] mb-12"></div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <Card 
-                imageSrc="/images/architecture-1.png"
-                title="The Modern Library"
-                body="An exploration of light and space in educational environments, focusing on the intersection of public gathering and quiet contemplation."
-                ctaText="View Project"
-                ctaHref="/projects"
-              />
-              <Card 
-                imageSrc="/images/interior-1.png"
-                title="Calm Interiors"
-                body="Creating restorative spaces through intentional material selection and restrained detailing. A masterclass in acoustic dampening."
-                ctaText="Read Case Study"
-                ctaHref="/projects"
-                useRhombusClip={true}
-              />
-              <InsightCard 
-                imageSrc="/images/architecture-1.png"
-                category="Design Thinking"
-                title="Why Materials Matter"
-                summary="A deep dive into our material selection process and how tactile experiences shape our perception of architectural volumes."
-                href="/insights"
-              />
-            </div>
-          </FadeIn>
-        </SectionWrapper>
-
-        <ImageBand imageSrc="/images/architecture-1.png">
-          <FadeIn>
-            <h2 className="text-[var(--color-white)] mb-6 max-w-2xl">Architecture that elevates the human experience.</h2>
-            <Button variant="primary">Discover Our Approach</Button>
           </FadeIn>
         </ImageBand>
 
-        <SectionWrapper background="stone">
+        {/* ── Section 4: Sector Grid ─────────────────────────────────── */}
+        <SectionWrapper background="white" className="py-20 md:py-[120px]">
           <FadeIn>
-            <div className="mb-16">
-              <h2 className="mb-4">Sector Profile</h2>
-              <div className="w-20 h-1 bg-[var(--color-yellow)] mb-12"></div>
+            <div className="mb-14">
+              <h2 className="mb-4">Expertise That Starts with Understanding</h2>
+              <div className="w-16 h-1 bg-[var(--color-yellow)] mb-6" />
+              <p className="lead text-[var(--color-graphite)]/80 max-w-2xl">
+                Every sector brings its own culture, challenges and expectations. Our work begins with understanding what makes each one unique.
+              </p>
             </div>
-            
-            <SectorCard 
-              imageSrc="/images/interior-1.png"
-              title="Educational Spaces"
-              descriptor="We design learning environments that foster curiosity, collaboration, and academic excellence through intentional spatial planning."
-              features={[
-                "Higher Education Facilities",
-                "Research Laboratories",
-                "Primary & Secondary Schools",
-                "Campus Masterplanning"
-              ]}
-              ctaHref="/sector/education"
-            />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+              {SECTORS.map((sector) => (
+                <SectorCard
+                  key={sector.href}
+                  imageSrc={sector.image}
+                  title={sector.title}
+                  descriptor={sector.descriptor}
+                  ctaHref={sector.href}
+                  stacked
+                />
+              ))}
+            </div>
           </FadeIn>
         </SectionWrapper>
 
-        <SectionWrapper background="white">
+        {/* ── Section 5: Projects Strip ──────────────────────────────── */}
+        <SectionWrapper background="stone" className="py-20 md:py-[120px]">
           <FadeIn>
-            <div className="mb-16">
-              <h2 className="mb-4">Process & Team</h2>
-              <div className="w-20 h-1 bg-[var(--color-yellow)] mb-12"></div>
+            <div className="mb-14">
+              <h2 className="mb-4">From vision to reality.</h2>
+              <div className="w-16 h-1 bg-[var(--color-yellow)] mb-6" />
+              <p className="lead text-[var(--color-graphite)]/80 max-w-2xl">
+                Every project begins with a conversation and ends with a place that matters.
+              </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-              <div className="space-y-8">
-                <ProcessStep 
-                  number="01"
-                  title="Contextual Analysis"
-                  descriptor="Rigorous investigation of site, climate, history, and community needs before a single line is drawn."
-                  icon={<PencilRuler className="w-6 h-6" />}
-                />
-                <ProcessStep 
-                  number="02"
-                  title="Conceptual Framework"
-                  descriptor="Developing a strong, narrative-driven design concept that serves as the guiding principle for all subsequent decisions."
-                  icon={<PencilRuler className="w-6 h-6" />}
-                />
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="cursor-pointer">
-                      <TeamCard 
-                        imageSrc="/images/team-1.png"
-                        name="James Sterling"
-                        role="Founding Partner"
-                        bioExcerpt="With over 25 years of experience in high-end commercial architecture."
-                        onViewProfile={() => {}}
-                      />
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl bg-[var(--color-white)] text-[var(--color-graphite)] rounded-none">
-                    <DialogHeader>
-                      <DialogTitle className="font-heading text-2xl font-bold">James Sterling</DialogTitle>
-                      <DialogDescription className="text-sm uppercase tracking-wider text-[var(--color-graphite)]/60">
-                        Founding Partner
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="flex flex-col md:flex-row gap-8 mt-6">
-                      <img src="/images/team-1.png" alt="James Sterling" loading="lazy" decoding="async" className="w-full md:w-1/3 aspect-[3/4] object-cover grayscale-transition" />
-                      <div className="w-full md:w-2/3 space-y-4 body">
-                        <p>James founded WDM with a singular vision: to create architecture that fundamentally respects and elevates the human experience.</p>
-                        <p>His award-winning work spans three continents, focusing primarily on civic and educational institutions where public gathering spaces are critical.</p>
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
 
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="cursor-pointer">
-                      <TeamCard 
-                        imageSrc="/images/team-2.png"
-                        name="Elena Rostova"
-                        role="Design Director"
-                        bioExcerpt="Specializing in sustainable materials and restorative interior environments."
-                        onViewProfile={() => {}}
-                      />
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl bg-[var(--color-white)] text-[var(--color-graphite)] rounded-none">
-                    <DialogHeader>
-                      <DialogTitle className="font-heading text-2xl font-bold">Elena Rostova</DialogTitle>
-                      <DialogDescription className="text-sm uppercase tracking-wider text-[var(--color-graphite)]/60">
-                        Design Director
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="flex flex-col md:flex-row gap-8 mt-6">
-                      <img src="/images/team-2.png" alt="Elena Rostova" loading="lazy" decoding="async" className="w-full md:w-1/3 aspect-[3/4] object-cover grayscale-transition" />
-                      <div className="w-full md:w-2/3 space-y-4 body">
-                        <p>Elena's meticulous approach to detailing and material selection defines the WDM interior aesthetic.</p>
-                        <p>She leads the studio's research into acoustic properties of natural materials and their psychological impact on users.</p>
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </div>
+            {/* Horizontal scroll on mobile, 3-col grid on desktop */}
+            <div className="flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 md:overflow-visible md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:mx-0 md:px-0">
+              {PROJECTS.map((project) => (
+                <div key={project.title} className="min-w-[300px] flex-shrink-0 md:min-w-0">
+                  <span className="inline-block mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-gold)]">
+                    {project.tag}
+                  </span>
+                  <Card
+                    imageSrc={project.image}
+                    imageAlt={project.title}
+                    title={project.title}
+                    body={project.summary}
+                    ctaText="View Project"
+                    ctaHref="#"
+                    useRhombusClip
+                    className="bg-[var(--color-stone)]"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12">
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors"
+              >
+                View All Projects →
+              </Link>
             </div>
           </FadeIn>
         </SectionWrapper>
+
+        {/* ── Section 6: Meet the Team ───────────────────────────────── */}
+        <SectionWrapper background="white" className="py-20 md:py-[120px]">
+          <FadeIn>
+            <div className="mb-14">
+              <h2 className="mb-4">Three perspectives. One belief.</h2>
+              <div className="w-16 h-1 bg-[var(--color-yellow)] mb-6" />
+              <p className="lead text-[var(--color-graphite)]/80 max-w-2xl">
+                Martin, Simon and Parminder bring different strengths to every project. What they share is a commitment to design that begins with listening.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+              {TEAM.map((member) => (
+                <TeamCard
+                  key={member.name}
+                  imageSrc={member.image}
+                  name={member.name}
+                  role={member.role}
+                  bioExcerpt={member.bio}
+                  loading={member.loading}
+                />
+              ))}
+            </div>
+
+            <div className="mt-12">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors"
+              >
+                Meet The Team →
+              </Link>
+            </div>
+          </FadeIn>
+        </SectionWrapper>
+
+        {/* ── Section 7: Insights Strip ──────────────────────────────── */}
+        <SectionWrapper background="stone" className="py-20 md:py-[120px]">
+          <FadeIn>
+            <div className="mb-14">
+              <h2 className="mb-4">Thinking beyond the building.</h2>
+              <div className="w-16 h-1 bg-[var(--color-yellow)] mb-6" />
+              <p className="lead text-[var(--color-graphite)]/80 max-w-2xl">
+                Our insights explore the ideas, challenges and conversations that shape great design.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <InsightCard
+                imageSrc="/images/insight-1.png"
+                category="Article"
+                title="Why the best buildings begin with listening"
+                summary="The most enduring architecture starts not with sketches, but with conversations. Here's how deep listening shapes every project we take on."
+                href="#"
+              />
+              <InsightCard
+                imageSrc="/images/insight-2.png"
+                category="Article"
+                title="Material honesty and what it means today"
+                summary="As trends cycle through surface and spectacle, we explore why authentic material choices still produce the most powerful spaces."
+                href="#"
+              />
+              <InsightCard
+                imageSrc="/images/insight-3.png"
+                category="Podcast"
+                title="On designing for belonging — with Dr Leila Hassan"
+                summary="A conversation about how architecture can foster genuine community and the growing evidence that spatial design shapes wellbeing."
+                href="#"
+                ctaLabel="Listen Now"
+              />
+            </div>
+
+            <div className="mt-12">
+              <Link
+                href="/insights"
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors"
+              >
+                Explore All Insights →
+              </Link>
+            </div>
+          </FadeIn>
+        </SectionWrapper>
+
+        {/* ── Section 8: Final CTA Band ──────────────────────────────── */}
+        <section className="relative w-full py-20 md:py-[120px] bg-[var(--color-yellow)] overflow-hidden">
+          <Rhombus
+            aria-hidden="true"
+            className="absolute -right-20 top-1/2 -translate-y-1/2 w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] text-[var(--color-graphite)] opacity-[0.06] pointer-events-none"
+          />
+          <div className="relative z-10 mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
+            <FadeIn>
+              <div className="max-w-2xl">
+                <h2 className="text-[var(--color-graphite)] mb-6">
+                  Let's Create Something That Matters
+                </h2>
+                <p className="lead text-[var(--color-graphite)]/80 mb-10">
+                  Every place tells a story. We'd love to help you tell yours. Whether you have a brief ready or an idea you're still shaping, the conversation starts here.
+                </p>
+                <Button variant="secondary" size="lg" asChild>
+                  <Link href="/contact">Start a Conversation</Link>
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
       </main>
 
       <Footer />

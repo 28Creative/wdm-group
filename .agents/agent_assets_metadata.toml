@@ -30,3 +30,81 @@ id = "HAKwKU_HyHA44Fs9RJICb"
 uri = "file://artifacts/wdm/public/images/process-1.png"
 type = "image"
 title = "Architectural sketch or blueprints"
+
+[[generated]]
+id = "OBsRj3DOgsg9faKmGV6Ue"
+uri = "file://artifacts/wdm/public/images/hero.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "kBPQADdIkb9_G8v1kS4UN"
+uri = "file://artifacts/wdm/public/images/band.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "horB6j-6ZSIPmJhM_-HeB"
+uri = "file://artifacts/wdm/public/images/sector-education.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "UuHmU6P9zNgTNuK_3Rus5"
+uri = "file://artifacts/wdm/public/images/sector-commercial.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "pv0ylH15HKGH0Yh9bhvP7"
+uri = "file://artifacts/wdm/public/images/sector-residential.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "2VijN4CiYTP3vTW5JhVR0"
+uri = "file://artifacts/wdm/public/images/sector-hospitality.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "0Otop0PSYl5PsvoGjhIGp"
+uri = "file://artifacts/wdm/public/images/project-1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "POmS6hu7B9h3_4eO9zS7O"
+uri = "file://artifacts/wdm/public/images/project-2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "FcgWFtqjpi3xySN-rNr3G"
+uri = "file://artifacts/wdm/public/images/project-3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "N97ye1CmqpxeOgFdkuuE2"
+uri = "file://artifacts/wdm/public/images/team-3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "VFFqW0EOaNxfgWhsFYE5X"
+uri = "file://artifacts/wdm/public/images/insight-1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "kCVeLAu9q_Iu1X8A51P_l"
+uri = "file://artifacts/wdm/public/images/insight-2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "dAEhw0P48z3lGdYptrcxZ"
+uri = "file://artifacts/wdm/public/images/insight-3.png"
+type = "image"
+title = "generated_image"

@@ -9,6 +9,7 @@ interface InsightCardProps {
   summary: string;
   href: string;
   loading?: "lazy" | "eager";
+  ctaLabel?: string;
   className?: string;
 }
 
@@ -19,6 +20,7 @@ export function InsightCard({
   summary,
   href,
   loading = "lazy",
+  ctaLabel = "Read More",
   className,
 }: InsightCardProps) {
   return (
@@ -40,7 +42,7 @@ export function InsightCard({
         <p className="text-sm leading-relaxed text-[var(--color-graphite)]/80 mb-8 flex-grow">{summary}</p>
         
         <Link href={href} className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider mt-auto w-fit hover:text-[var(--color-gold)] transition-colors">
-          Read More <ArrowRight className="w-4 h-4" />
+          {ctaLabel} <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
     </div>
