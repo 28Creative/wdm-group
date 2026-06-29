@@ -1,0 +1,365 @@
+PHASE 5 — SECTOR EXPERTISE HUB + ALL FOUR CHILD PAGES PROMPT
+
+Build the /sector-expertise hub page and four child pages: /sector/education, /sector/commercial, /sector/residential, /sector/hospitality. All design tokens and components from Phase 1 apply throughout.
+
+SECTOR EXPERTISE HUB — /sector-expertise
+Section 1 — Hero
+
+Full viewport height. Graphite background with placeholder image behind semi-transparent overlay. Rhombus decorative element in yellow.
+
+H1: "Different sectors. Different challenges. One people-centred approach."
+Subtext: "Every sector brings its own culture, constraints and expectations. Our work begins with understanding what makes each one unique — and designing from there."
+CTA: "Explore Our Sectors" (primary yellow button, smooth scrolls to sector grid below)
+Staggered fade-in on load
+
+Section 2 — Intro
+
+White background. Single column, max-width 800px, centred.
+
+Label (small caps, yellow): "Sector Expertise"
+Body: "We work across a range of sectors, each with its own culture, priorities and challenges. What connects our work across all of them is a consistent commitment to understanding the people who will use the space before we begin designing it. Our sector experience means we arrive at each project with relevant knowledge — but we never arrive with assumptions. Every project begins with listening."
+
+Section 3 — Sector Card Grid
+
+Stone background. Title: "Where We Work."
+
+Five <SectorCard> components. First four in a 2x2 grid (desktop) / stacked (mobile). Fifth card full-width below:
+
+Education: "Spaces that support learning, wellbeing and the wider school community." Priorities tick list: Safeguarding and security / Inclusive design / Flexible learning environments / Wellbeing and biophilia / Community and extended use. "Explore Education →" → /sector/education
+Commercial & Workplace: "Environments that help organisations and their people perform at their best." Priorities: Collaboration and focus / Adaptability and future-proofing / Culture and identity / Wellbeing and comfort / Commercial viability. "Explore Commercial →" → /sector/commercial
+Residential: "Homes and developments designed around how people want to live." Priorities: Quality and character / Placemaking / Tenure mix and community / Sustainability / Commercial deliverability. "Explore Residential →" → /sector/residential
+Hospitality: "Experience-led spaces that connect with guests and create lasting impressions." Priorities: Guest journey and experience / Brand and identity / Operational efficiency / Sustainability / Adaptability. "Explore Hospitality →" → /sector/hospitality
+Community & Public Spaces (full-width card): "Places that bring people together and serve the wider community." Priorities: Inclusive and accessible design / Community engagement / Longevity and adaptability / Cultural sensitivity / Value for money. No child page link — CTA: "Start a Conversation" → /contact
+
+Section 4 — Why Sector Understanding Matters
+
+White background. Two-column layout (stacks on mobile).
+
+Left: Title: "Sector knowledge that goes beyond the surface."
+
+Body: "Understanding a sector means more than knowing its building types. It means understanding the regulatory environment, the procurement landscape, the funding pressures, the user groups and the cultural expectations that shape every decision. Our sector experience means we can move quickly, ask the right questions and avoid the costly mistakes that come from learning on the job."
+Right: Title: "Experience that informs, not constrains."
+
+Body: "Sector experience should make a practice more responsive, not more formulaic. We bring relevant knowledge to every project — but we never let it replace the listening and exploration that produces genuinely site-specific, people-centred design. Every project is different. Our sector understanding helps us respond to that difference intelligently."
+
+Section 5 — CTA Band
+
+Graphite background. White text. Rhombus decorative shape in yellow.
+
+Title: "Ready to discuss your project?"
+Body: "Whatever sector you're working in, the conversation starts the same way — with listening."
+Two CTAs: "Start a Conversation" (primary yellow → /contact), "Explore Our Work" (ghost white → /projects)
+
+
+EDUCATION CHILD PAGE — /sector/education
+Section 1 — Hero
+
+Full viewport height. Graphite background, placeholder image, semi-transparent overlay. Rhombus in yellow.
+
+H1: "Designing spaces where young people can learn, grow and belong."
+Subtext: "Education architecture is about more than buildings. It is about creating environments that support every aspect of school life — learning, wellbeing, community and play."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+Section 2 — Why Education Design Matters
+
+White background. Title: "Why the learning environment matters."
+
+Intro: "Research consistently shows that the quality of the learning environment has a measurable impact on pupil attainment, attendance and wellbeing. Getting education design right is not a luxury — it is a responsibility."
+
+4-item icon grid (2x2 desktop / stacked mobile). Each: placeholder icon, title, 2-sentence body:
+
+"Learning Environments Shape Outcomes" — "The spaces where young people learn directly influence how well they engage, focus and retain information. Poor acoustics, inadequate light and inflexible layouts can undermine even the best teaching."
+"Wellbeing Starts With Space" — "Schools that prioritise calm, welcoming environments see improvements in pupil behaviour and staff retention. Design that considers sensory experience, movement and outdoor connection makes a measurable difference."
+"Community Begins at the Gate" — "The best school buildings serve their communities beyond the school day — as venues, resources and gathering places. Design that considers extended use creates lasting social value."
+"Flexibility Protects Investment" — "Educational needs change. Buildings that can adapt to new curricula, growing cohorts and evolving pedagogy continue to deliver value long after completion."
+
+Section 3 — Education Expertise Strip
+
+Stone background. Title: "Education Expertise Across Every Stage."
+
+Five cards in a horizontal strip (horizontal scroll on mobile). Each: placeholder image, title, 2-sentence descriptor:
+
+Early Years & Primary: "Creating nurturing, stimulating environments for younger pupils — spaces that feel safe, inspiring and connected to the outdoors."
+Secondary Schools: "Designing complex, multi-use buildings that serve diverse year groups, subjects and activities without losing a sense of coherence and identity."
+SEND & Specialist Provision: "Delivering environments that respond to the specific sensory, mobility and learning needs of pupils with special educational needs and disabilities."
+Further Education: "Creating campus environments that reflect the ambitions of FE colleges and their students — professional, flexible and community-facing."
+Community & Extended Use: "Designing school buildings that serve the wider community beyond the school day — maximising social value and return on investment."
+
+Section 4 — Full-Width Image Band
+
+Use <ImageBand>. Dark overlay. Placeholder image.
+
+Text: "The best school buildings don't just support learning — they inspire it. Every corridor, classroom and courtyard is an opportunity to create an environment where young people feel they belong."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+Section 5 — Education & Wellbeing Grid
+
+White background. Title: "Design That Supports the Whole Child."
+
+Intro: "Wellbeing is not a feature to be added to a school building. It is a principle that should shape every design decision from the outset."
+
+6-item icon grid (3x2 desktop / 2x3 mobile). Each: placeholder icon, title, one-line descriptor:
+
+Natural Light: "Maximising daylight in learning spaces to improve focus and mood."
+Acoustics: "Controlling sound to support concentration and reduce fatigue."
+Biophilic Design: "Connecting pupils with nature through planting, views and natural materials."
+Movement & Circulation: "Designing routes that encourage activity and reduce congestion."
+Outdoor Learning: "Creating external spaces that extend the curriculum beyond the classroom."
+Sensory Consideration: "Designing for pupils with sensory sensitivities across every aspect of the environment."
+
+Section 6 — Related Insights
+
+Stone background. Title: "Thinking About Education Design."
+
+Two <InsightCard> components side by side (stacks on mobile):
+
+Card 1: placeholder image, tag "Article", title "How the Learning Environment Affects Pupil Outcomes", summary "Exploring the evidence behind environment-led improvements in attainment, attendance and wellbeing.", "Read More →" (stub)
+Card 2: placeholder image, tag "Article", title "Designing Schools That Serve Their Communities", summary "How extended-use design creates lasting social value beyond the school day.", "Read More →" (stub)
+
+Section 7 — Process Bar
+
+White background. Title: "How We Approach Education Projects."
+
+Four-step horizontal bar (desktop) / vertical stack (mobile). Yellow connector line. Use <ProcessStep>:
+
+Listen: "Understanding the school community, the brief, the budget and the aspirations before any design begins."
+Understand: "Engaging with staff, pupils and governors to build a picture of how the school works and what it needs."
+Design: "Creating environments that respond to everything we've learned — spatially, technically and experientially."
+Deliver: "Guiding the project through planning and construction with minimum disruption to the school community."
+
+Section 8 — Project Cards
+
+Stone background. Title: "Education Projects."
+
+Three placeholder <Card> components in a row (stacks on mobile). Each: placeholder image, placeholder project name, sector tag "Education" in yellow, placeholder one-line summary, "View Project →" (stub).
+
+"View All Projects →" → /projects
+Section 9 — CTA
+
+Graphite background. White text.
+
+Title: "Let's design a space where learning can thrive."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+
+COMMERCIAL CHILD PAGE — /sector/commercial
+Section 1 — Hero
+
+Full viewport height. Graphite background, placeholder image, overlay. Rhombus in yellow.
+
+H1: "Designing environments that help organisations thrive."
+Subtext: "Most workplace projects don't begin with a building. They begin with a challenge — a growing business, a leadership team, an organisation adapting to new ways of working."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+Section 2 — Looking Beyond the Brief
+
+White background. Two-column layout (stacks on mobile).
+
+Left — Label (small caps, yellow): "Our Approach". Title: "Understanding the organisation before designing the environment."
+
+Body: "At Why Design Matters, we believe the most successful commercial environments emerge when we understand the organisation before we begin designing the architecture. The workplace is often where organisational ambitions, challenges and culture become visible. It influences how teams collaborate, how leaders communicate, how ideas are shared and how organisations prepare for the future."
+Right — Title: "Looking Beyond the Brief."
+
+Body: "Commercial projects are often presented as a practical problem to solve — more space, a refurbishment, a relocation. Yet the most valuable conversations happen when we step back and ask why. Before discussing solutions, we spend time understanding what sits behind the brief. What is driving the change? How is the organisation evolving? Where are opportunities being missed? The answers often reveal opportunities that sit beyond the original brief."
+
+Section 3 — Supporting Performance Through Design
+
+Stone background. Two-column layout (stacks on mobile).
+
+Left: Title: "Supporting Performance Through Design."
+
+Body: "Every organisation relies on individuals and teams performing at their best. The environment in which work takes place plays a bigger role than many organisations realise. Natural light, acoustics, comfort, movement and flexibility all influence how employees experience the working day. The most effective commercial environments recognise this reality and provide choice — creating settings that support different activities without losing a sense of connection and purpose."
+Right: Title: "Creativity Grounded in Commercial Reality."
+
+Body: "Every commercial project involves balancing ambition with practicality. Budgets, operational requirements, programme pressures and long-term objectives all influence the decisions made along the way. We see these constraints as part of the design process rather than barriers to it. Organisations rarely stand still — the needs of a business today may be very different in five or ten years' time. This is why adaptability sits at the heart of many successful commercial projects."
+
+Section 4 — Full-Width Image Band
+
+Use <ImageBand>. Dark overlay. Placeholder image.
+
+Text: "The most successful commercial projects are rarely just about buildings. They are about creating environments that reflect organisational culture, support performance and help businesses move forward with confidence."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+Section 5 — Commercial Experience
+
+White background. Title: "Commercial Experience Across Sectors."
+
+Body (centred, max-width 800px): "Our experience spans workplaces, headquarters, industrial environments, commercial developments and mixed-use projects. While every organisation faces different challenges, our approach remains rooted in understanding what makes that organisation unique, what it is trying to achieve and how the environment can help support that journey."
+
+Five experience cards in a horizontal strip (horizontal scroll on mobile). Each: placeholder icon, title, one-line descriptor:
+
+Workplaces & Offices: "Environments designed around how teams actually work."
+Headquarters & HQ Moves: "Buildings that express organisational identity and ambition."
+Industrial & Logistics: "Functional environments that support operational performance."
+Commercial Development: "Development-led projects that balance viability with design quality."
+Mixed-Use Projects: "Complex schemes that bring together work, retail, leisure and community."
+
+Section 6 — Related Insights
+
+Stone background. Title: "Thinking About Commercial Design."
+
+Two <InsightCard> components side by side (stacks on mobile):
+
+Card 1: placeholder image, tag "Article", title "How Organisational Culture Shapes Great Design", summary "Exploring how meaningful environments embody culture, support performance and help organisations express who they are.", "Read More →" (stub)
+Card 2: placeholder image, tag "Article", title "When a Space Problem Isn't Really a Space Problem", summary "Understanding how workplace challenges often reveal wider organisational opportunities.", "Read More →" (stub)
+
+Section 7 — CTA
+
+Graphite background. White text.
+
+Title: "Let's start with your challenge — not your building."
+Body: "Whether you're planning a new workplace, reviewing an existing environment or exploring a wider development opportunity, we'd love to hear your story."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+
+RESIDENTIAL CHILD PAGE — /sector/residential
+Section 1 — Hero
+
+Full viewport height. Graphite background, placeholder image, overlay. Rhombus in yellow.
+
+H1: "Homes and places designed around how people want to live."
+Subtext: "Residential architecture is about more than units and densities. It is about creating places where people feel at home — individually and collectively."
+Two CTAs: "Residential Development" (ghost, smooth scroll to #residential-development), "Private Homes" (ghost, smooth scroll to #private-homes)
+
+Section 2 — Intro
+
+White background. Single column, max-width 800px, centred.
+
+Label (small caps, yellow): "Residential"
+Body: "We work across the full spectrum of residential architecture — from large-scale residential development to carefully considered private homes. What connects both is a belief that the quality of the home environment has a profound effect on the quality of people's lives. Whether we are working with a developer, a housing association or an individual family, our approach begins in the same place: understanding who will live there and what they need from their home."
+
+Section 3 — Residential Development
+
+ID: residential-development
+
+Stone background. Two-column layout alternating (stacks on mobile). Placeholder image.
+
+Label (small caps, yellow): "Residential Development"
+Title: "Development that creates places, not just properties."
+Body: "The most successful residential developments do more than provide accommodation. They create places — with character, community and a sense of belonging — that people are proud to call home. We work with developers and housing associations to create schemes that balance commercial viability with design quality, creating environments that attract residents, retain value and stand up over time."
+Checklist (yellow ticks): Masterplanning and site layout / Tenure mix and density optimisation / Placemaking and public realm / Affordable and mixed-tenure housing / Planning strategy and application / Design quality and character
+Italic closing line: "Good residential development begins with the people who will live there — not the units that need to be sold."
+
+Related Insights strip below (stone background):
+
+Two <InsightCard> components:
+"Why Placemaking Matters in Residential Development" — "How design quality and community thinking create residential schemes that outperform the market." (stub)
+"Designing for Mixed Tenure Without Compromise" — "Exploring how tenure-blind design creates more cohesive, successful residential communities." (stub)
+
+Section 4 — Private Homes
+
+ID: private-homes
+
+White background. Two-column layout alternating (stacks on mobile). Placeholder image.
+
+Label (small caps, yellow): "Private Homes"
+Title: "Homes designed around the people who live in them."
+Body: "Every private home project begins with a conversation about how our clients want to live — not just how many rooms they need. We design homes that respond to the specific rhythms, priorities and aspirations of the families and individuals who will inhabit them. Whether it is a new build, an extension or a significant remodel, we bring the same careful listening and considered design to every private commission."
+Checklist (yellow ticks): New build private homes / Extensions and remodelling / Listed building and conservation area work / Planning strategy for residential development / Interior spatial planning / Landscape and external space
+Italic closing line: "A home should feel as though it was designed for you. Because it was."
+
+Related Insights strip below (stone background):
+
+Two <InsightCard> components:
+"Extending Your Home: What to Consider Before You Start" — "A practical guide to the questions worth asking before committing to a home extension." (stub)
+"Listed Buildings and Sensitive Extensions" — "How to approach alterations to listed and historic properties with confidence." (stub)
+
+Section 5 — CTA
+
+Graphite background. White text.
+
+Title: "Let's create a home that's built around you."
+Body: "Whether you're a developer with a site or a family with a vision, the conversation starts with listening."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+
+HOSPITALITY CHILD PAGE — /sector/hospitality
+Section 1 — Hero
+
+Full viewport height. Graphite background, placeholder image, overlay. Rhombus in yellow.
+
+H1: "Creating experiences, not just spaces."
+Subtext: "Hospitality architecture is about designing for feeling — the moment a guest arrives, the quality of their stay and the memory they take with them."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+Section 2 — Experience-Led Architecture
+
+White background. Two-column layout (stacks on mobile).
+
+Left — Label (small caps, yellow): "Our Approach". Title: "Design that begins with the guest journey."
+
+Body: "Every hospitality environment tells a story. The most successful ones tell it consistently — from the approach to the entrance, from check-in to the room, from the restaurant to the spa. At Why Design Matters, we design hospitality environments by mapping the complete guest journey and identifying every moment where design can enhance the experience."
+Right: Title: "Architecture that works as hard as your team."
+
+Body: "Great hospitality design is invisible to guests — they simply feel comfortable, welcomed and at ease. Behind that effortless experience is careful planning: efficient back-of-house layouts, logical circulation routes, flexible spaces and materials that perform under the pressure of daily hospitality operations. We balance the experiential with the operational, creating environments that delight guests and support the teams that serve them."
+
+Section 3 — Guest Journey Graphic
+
+Stone background. Title: "Designing Across the Complete Guest Journey."
+
+Five-stage horizontal step graphic (desktop) / vertical stack (mobile). Build as coloured step-block component with connecting arrows. Each block: stage name, icon placeholder, one-line descriptor:
+
+DISCOVER (yellow background, graphite text): "First impressions begin before arrival — in how the building presents itself to the world."
+WELCOME (graphite background, white text): "The arrival sequence sets the emotional tone for everything that follows."
+ENGAGE (yellow background, graphite text): "Every touchpoint — dining, leisure, relaxation — is an opportunity to deepen the experience."
+DEPART (graphite background, white text): "The departure experience shapes the lasting memory guests carry with them."
+RETURN (yellow background, graphite text): "Great hospitality environments create the conditions for loyalty and return."
+
+Section 4 — Experience-Led Architecture Delivered
+
+White background. Single column max-width 800px centred.
+
+Title: "Different Environments. Shared Principles."
+Body: "Whether we are designing a boutique hotel, a restaurant, a leisure facility or a wellbeing space, our approach is rooted in the same principles: understand the brand, map the guest journey, design for experience and deliver with operational intelligence."
+Checklist (yellow ticks, two columns): Brand alignment and identity expression / Guest journey mapping / Arrival and reception design / Food and beverage environments / Bedroom and suite design / Spa and wellbeing spaces / Leisure and fitness facilities / Back-of-house efficiency / Sustainable and responsible design / Refurbishment and rebranding
+
+Section 5 — Explore Expertise
+
+Stone background. Title: "Hospitality Expertise Across Every Environment."
+
+Four cards in a row (stacks on mobile). Each: placeholder image, title, 2-sentence descriptor:
+
+Hotels & Boutique Accommodation: "From city-centre hotels to rural retreats — creating accommodation environments that reflect brand, place and guest expectation."
+Restaurants & Food & Beverage: "Designing dining environments that combine atmosphere, acoustics and operational efficiency into a seamless guest experience."
+Leisure & Sports Facilities: "Creating active environments that motivate, energise and serve their communities — from health clubs to sports centres."
+Wellbeing & Spa: "Designing spaces of calm and restoration — where every material, light source and spatial sequence contributes to the guest's sense of renewal."
+
+Section 6 — Beyond the Building
+
+White background. Two-column layout (stacks on mobile).
+
+Left: Title: "Staff Experience Matters."
+
+Body: "The quality of the guest experience is inseparable from the quality of the staff experience. Back-of-house environments that are well-designed, logical and comfortable support teams to deliver better service consistently. We design hospitality environments that work as well behind the scenes as they do in front of them."
+Right: Title: "The Commercial Case for Great Design."
+
+Body (with yellow tick checklist): Higher average daily rates for well-designed accommodation / Stronger guest loyalty and return visit rates / Improved online review scores linked to environment quality / Reduced staff turnover in well-designed operational spaces / Greater operational efficiency through logical layout / Longer asset life through quality material specification
+
+Section 7 — Related Insights
+
+Stone background. Title: "Thinking About Hospitality Design."
+
+Two <InsightCard> components side by side:
+
+"Why the Guest Journey Should Drive Every Design Decision" — "How mapping the complete guest experience from arrival to departure creates more coherent and successful hospitality environments." (stub)
+"The Link Between Staff Environment and Guest Experience" — "Exploring how back-of-house design quality directly influences front-of-house service." (stub)
+
+Section 8 — CTA
+
+Graphite background. White text.
+
+Title: "Let's create an experience your guests will return for."
+Body: "Whether you're developing a new hospitality venue or redefining an existing one, the conversation starts with the guest."
+CTA: "Start a Conversation" (primary yellow → /contact)
+
+
+Global rules for all pages in this phase:
+
+Fade-in on scroll for every section using Intersection Observer
+Minimum 80px vertical padding per section, 120px on desktop
+All CTAs use <Button> component from Phase 1
+All internal links route correctly to their target pages
+Mobile-first — every page checked at 375px viewport
+Smooth scroll for anchor links on the Residential page (#residential-development, #private-homes)
+Guest Journey graphic on Hospitality must render as a proper visual step component — not a bullet list
+Sector hub → child page navigation must work in both directions (hub links to children, each child page has breadcrumb or back link to hub)
