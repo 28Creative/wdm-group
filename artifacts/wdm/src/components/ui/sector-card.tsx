@@ -9,6 +9,7 @@ interface SectorCardProps {
   descriptor: string;
   features?: string[];
   ctaHref: string;
+  ctaLabel?: string;
   loading?: "lazy" | "eager";
   stacked?: boolean;
   className?: string;
@@ -20,6 +21,7 @@ export function SectorCard({
   descriptor,
   features = [],
   ctaHref,
+  ctaLabel = "Explore Sector",
   loading = "lazy",
   stacked = false,
   className,
@@ -52,7 +54,7 @@ export function SectorCard({
         )}
 
         <Button variant="primary" asChild>
-          <Link href={ctaHref}>Explore Sector</Link>
+          <Link href={ctaHref}>{ctaLabel}</Link>
         </Button>
       </div>
     </div>
