@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProcessStep — structure > renders with base layout classes 1`] = `"flex flex-col gap-4 group"`;

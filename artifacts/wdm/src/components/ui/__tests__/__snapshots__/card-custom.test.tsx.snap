@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card — structure > renders with base layout classes 1`] = `"group flex flex-col h-full bg-[var(--color-white)]"`;
