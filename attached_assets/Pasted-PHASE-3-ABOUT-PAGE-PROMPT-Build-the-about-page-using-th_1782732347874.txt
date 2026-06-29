@@ -1,0 +1,107 @@
+PHASE 3 — ABOUT PAGE PROMPT
+
+Build the /about page using the component library from Phase 1. All design tokens apply — no new colours, no inline styles.
+Section 1 — Hero
+
+Full viewport height. Graphite background with placeholder image behind semi-transparent overlay. Rhombus decorative element in yellow (background layer).
+
+H1: "Design that starts with people."
+Subtext: "At Why Design Matters, we believe great design begins long before the first sketch. It starts with listening."
+Single CTA: "Start a Conversation" (primary yellow button → /contact)
+Staggered fade-in on load (same pattern as homepage hero)
+
+Section 2 — The Story
+
+White background. Single column, max-width 800px, centred.
+
+Intro label (small caps, yellow, Montserrat): "Our Story"
+Body copy: "Why Design Matters was founded on a simple belief — that the quality of the spaces we inhabit has a profound effect on the quality of our lives. We exist to create architecture that takes that responsibility seriously. Our practice brings together three directors — Martin, Simon and Parminder — each with a distinct perspective, and a shared commitment to design that begins with understanding people, place and purpose. We don't begin with aesthetics. We begin with questions. What is this place for? Who will use it? How should it make them feel? What does success look like — not just at completion, but five or ten years from now? The answers shape everything that follows."
+
+Section 3 — Mission Statement Band
+
+Full-width. Use <ImageBand> component. Dark overlay on placeholder image.
+
+Large italic quote overlay: "We design contextual, biophilic architecture that begins with real listening — creating environments that perform for people, purpose and place."
+No CTA on this section — let the quote breathe
+
+Section 4 — The WDM Difference
+
+Stone background (--color-stone). Title: "What Makes Us Different"
+
+Intro: "There are many ways to approach architecture. This is ours."
+
+2x2 icon grid (stacks to single column on mobile). Each item: placeholder icon, title, 2-sentence body:
+
+"We Listen Before We Design" — "Most projects benefit from slowing down at the start. We invest time in understanding what clients and communities truly need before any design work begins."
+"We Guide Projects With Confidence" — "Architecture involves navigating complexity — planning, procurement, programme and people. We guide clients through every stage with clarity and steady expertise."
+"We Balance Creativity With Commercial Reality" — "Ambitious design doesn't have to mean undeliverable design. We bring creativity and commercial awareness together so projects are inspiring and achievable."
+"We Design for Human Experience" — "Every decision we make is tested against a simple question: how will this feel for the people who use it? That question drives everything."
+
+Section 5 — Values Strip
+
+White background. Title: "The principles that guide how we think, work and collaborate."
+
+5 items in a horizontal strip (desktop) / 2-column grid (mobile). Each: placeholder icon, title, one-line descriptor:
+
+Harmonic Alignment — "Finding the balance between people, place and purpose."
+Empathy in Action — "Listening carefully before we respond."
+Creative Courage — "Exploring ideas that go beyond the obvious."
+Commercially Innovative — "Delivering ambition within real-world constraints."
+Authentic Authority — "Confident, grounded and honest in everything we do."
+
+Section 6 — Team Section
+
+Stone background. Title: "Behind every project is a team that genuinely cares."
+
+Intro: "Martin, Simon and Parminder each bring a distinct perspective to the practice. Together they create an environment where listening, creativity and delivery work in step."
+
+Three <TeamCard> components in a row (stacks to single column on mobile). Each card: placeholder photo (greyscale → colour on hover), name, role, bio, "Read [Name]'s Story" button that opens a <Modal> with full profile.
+Modal content per team member — build all three:
+Martin Beaumont — Director | Architect
+
+Bio: "Martin founded Why Design Matters on the belief that architecture should begin with people, not drawings. With decades of experience across education, commercial and community projects, he brings a calm, considered approach to every brief — asking the questions that reveal what a project is really about before the design process begins."
+
+Design Superpower: "Listening. Martin has an ability to hear what clients mean, not just what they say — and to translate that understanding into spaces that genuinely work."
+Favourite Value: Empathy in Action
+Inspired By: "The moment a client walks into a completed space and says it feels exactly right."
+Coffee Order: "Builder's tea, strong."
+What Drives Him: "The belief that a well-designed space can genuinely change how people feel about their day."
+
+Simon Jesson — Director | Architect
+
+Bio: "Simon is the bridge between creative ambition and practical delivery. Where others see constraints, Simon sees the puzzle — finding ways to achieve more with what's available, and ensuring every project is as buildable as it is beautiful."
+
+Design Superpower: "Making ideas work. Simon takes creative concepts and turns them into deliverable, cost-conscious solutions without losing the spark that made them compelling."
+Favourite Value: Commercially Innovative
+Inspired By: "Seeing a project come off the drawing board exactly as imagined — and watching it perform even better in use."
+Coffee Order: "Flat white, no sugar."
+What Drives Him: "Proving that doing things properly and doing things affordably aren't mutually exclusive."
+
+Parminder Degan — Director | Architect
+
+Bio: "Parminder approaches every project from the inside out — starting with the experience of the people who will use the space and working outward from there. Her work is characterised by sensitivity, detail and a deep understanding of how environments shape mood, behaviour and belonging."
+
+Design Superpower: "Spatial empathy. Parminder can walk into a space and immediately understand how it will feel to the people who inhabit it — and what needs to change."
+Favourite Value: Harmonic Alignment
+Inspired By: "Spaces that make people feel at home even when they've never been there before."
+Coffee Order: "Oat latte, always."
+What Drives Him: "Creating environments where people feel genuinely seen and considered."
+
+Modal must: open on button click, close on X button click, close on backdrop click, trap focus while open, be fully accessible (aria-modal, role="dialog", aria-labelledby).
+Section 7 — CTA Box
+
+White background. Centred. Yellow accent bar above the title.
+
+Title: "Ready to discuss your project?"
+Body: "Every conversation starts with listening. Tell us what you're working on and we'll take it from there."
+CTA: "Talk to Our Team" (primary yellow button → /contact)
+
+Global rules for this page:
+
+Fade-in on scroll for each section (Intersection Observer, same pattern as homepage)
+Minimum 80px vertical padding per section, 120px on desktop
+All CTAs use the <Button> component from Phase 1
+Mobile-first — check at 375px viewport width
+Modal must work correctly on mobile — full screen on small viewports
+
+
