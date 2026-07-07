@@ -52,28 +52,20 @@ describe("Insights page — featured article", () => {
 })
 
 describe("Insights page — filter tabs", () => {
-  it("renders all filter tabs including Podcast", () => {
+  it("renders all filter tabs without a Podcast tab", () => {
     render(<Insights />)
     expect(screen.getByRole("button", { name: "All" })).toBeInTheDocument()
     expect(screen.getByRole("button", { name: "Education" })).toBeInTheDocument()
     expect(screen.getByRole("button", { name: "Commercial" })).toBeInTheDocument()
     expect(screen.getByRole("button", { name: "Residential" })).toBeInTheDocument()
     expect(screen.getByRole("button", { name: "Hospitality" })).toBeInTheDocument()
-    expect(screen.getByRole("button", { name: "Podcast" })).toBeInTheDocument()
+    expect(screen.queryByRole("button", { name: "Podcast" })).not.toBeInTheDocument()
   })
 
   it("shows all 6 articles by default", () => {
     render(<Insights />)
-    const cards = screen.getAllByText(/how classroom acoustics|case for bringing|designing the guest|making the case|learning environments|embodied carbon/i)
+    const cards = screen.getAllByText(/how classroom acoustics|case for bringing|making the case for quality|what guests notice|post-pandemic school|embodied carbon/i)
     expect(cards.length).toBeGreaterThanOrEqual(6)
-  })
-
-  it("filters to Podcast articles when Podcast tab is clicked", () => {
-    render(<Insights />)
-    fireEvent.click(screen.getByRole("button", { name: "Podcast" }))
-    const listenLinks = screen.getAllByText(/listen now/i)
-    expect(listenLinks.length).toBeGreaterThanOrEqual(1)
-    expect(screen.queryByText("Embodied carbon in commercial buildings")).not.toBeInTheDocument()
   })
 
   it("filters to Education articles when Education tab is clicked", () => {
@@ -81,6 +73,13 @@ describe("Insights page — filter tabs", () => {
     fireEvent.click(screen.getByRole("button", { name: "Education" }))
     expect(screen.getByText("How classroom acoustics affect learning outcomes")).toBeInTheDocument()
     expect(screen.queryByText("Embodied carbon in commercial buildings")).not.toBeInTheDocument()
+  })
+
+  it("filters to Commercial articles when Commercial tab is clicked", () => {
+    render(<Insights />)
+    fireEvent.click(screen.getByRole("button", { name: "Commercial" }))
+    expect(screen.getByText("Embodied carbon in commercial buildings")).toBeInTheDocument()
+    expect(screen.queryByText("How classroom acoustics affect learning outcomes")).not.toBeInTheDocument()
   })
 })
 

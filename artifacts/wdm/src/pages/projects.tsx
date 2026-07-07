@@ -108,7 +108,7 @@ export default function Projects() {
             className="absolute -right-16 bottom-0 w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] text-[var(--color-yellow)] opacity-[0.06] pointer-events-none"
           />
           <div className="relative z-10 w-full mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16 pt-24">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl text-center md:text-left">
               <div className="hero-fade-1">
                 <Rhombus className="text-[var(--color-yellow)] w-8 h-8 mb-8" />
               </div>

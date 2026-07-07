@@ -9,16 +9,15 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Category = "Education" | "Commercial" | "Residential" | "Hospitality" | "Podcast";
+type Category = "Education" | "Commercial" | "Residential" | "Hospitality";
 type InsightTab = "All" | Category;
 
-const INSIGHT_TABS: InsightTab[] = ["All", "Education", "Commercial", "Residential", "Hospitality", "Podcast"];
+const INSIGHT_TABS: InsightTab[] = ["All", "Education", "Commercial", "Residential", "Hospitality"];
 
 interface Article {
   id: number;
   imageSrc: string;
   category: Category;
-  tag: "Article" | "Podcast";
   title: string;
   summary: string;
   author: string;
@@ -30,7 +29,6 @@ const ARTICLES: Article[] = [
     id: 1,
     imageSrc: "/images/insight-1.png",
     category: "Education",
-    tag: "Article",
     title: "How classroom acoustics affect learning outcomes",
     summary: "A review of the evidence linking poor acoustic design to reduced attainment — and what architects can do about it.",
     author: "WDM Studio",
@@ -40,7 +38,6 @@ const ARTICLES: Article[] = [
     id: 2,
     imageSrc: "/images/insight-2.png",
     category: "Commercial",
-    tag: "Article",
     title: "The case for bringing people back to the office",
     summary: "Design strategies that make the workplace a destination rather than an obligation — and why it matters for occupier value.",
     author: "WDM Studio",
@@ -48,43 +45,39 @@ const ARTICLES: Article[] = [
   },
   {
     id: 3,
-    imageSrc: "/images/insight-3.png",
-    category: "Hospitality",
-    tag: "Podcast",
-    title: "Designing the guest journey — with Sarah Moss",
-    summary: "We sat down with hospitality consultant Sarah Moss to talk about what guests really notice — and what designers often get wrong.",
-    author: "WDM Podcast",
-    date: "18 March 2025",
-  },
-  {
-    id: 4,
     imageSrc: "/images/insight-1.png",
     category: "Residential",
-    tag: "Article",
     title: "Making the case for quality in volume housing",
     summary: "Why the false economy of cost-cutting in residential development always costs more in the long run.",
     author: "WDM Studio",
     date: "7 February 2025",
   },
   {
+    id: 4,
+    imageSrc: "/images/insight-3.png",
+    category: "Commercial",
+    title: "Embodied carbon in commercial buildings",
+    summary: "Why developers and occupiers can no longer defer the question of embodied carbon — and where to start.",
+    author: "WDM Studio",
+    date: "2 December 2024",
+  },
+  {
     id: 5,
     imageSrc: "/images/insight-2.png",
-    category: "Education",
-    tag: "Podcast",
-    title: "Learning environments after COVID — with Dr James Reid",
-    summary: "A conversation about how the pandemic changed what we expect from school buildings, and whether the changes will stick.",
-    author: "WDM Podcast",
+    category: "Hospitality",
+    title: "What guests notice that designers overlook",
+    summary: "From acoustics to threshold design, the details that shape the hospitality experience — and why they are so often left to chance.",
+    author: "WDM Studio",
     date: "14 January 2025",
   },
   {
     id: 6,
     imageSrc: "/images/insight-3.png",
-    category: "Commercial",
-    tag: "Article",
-    title: "Embodied carbon in commercial buildings",
-    summary: "Why developers and occupiers can no longer defer the question of embodied carbon — and where to start.",
+    category: "Education",
+    title: "The post-pandemic school — what has actually changed?",
+    summary: "An honest review of how COVID shifted expectations for school buildings, and which changes are likely to stick.",
     author: "WDM Studio",
-    date: "2 December 2024",
+    date: "18 March 2025",
   },
 ];
 
@@ -93,8 +86,6 @@ export default function Insights() {
 
   const filtered = activeTab === "All"
     ? ARTICLES
-    : activeTab === "Podcast"
-    ? ARTICLES.filter((a) => a.tag === "Podcast")
     : ARTICLES.filter((a) => a.category === activeTab);
 
   return (
@@ -189,11 +180,11 @@ export default function Insights() {
               <FadeIn key={article.id} delay={i * 60}>
                 <InsightCard
                   imageSrc={article.imageSrc}
-                  category={`${article.tag} · ${article.category}`}
+                  category={`Article · ${article.category}`}
                   title={article.title}
                   summary={article.summary}
                   href="#"
-                  ctaLabel={article.tag === "Podcast" ? "Listen Now" : "Read More"}
+                  ctaLabel="Read More"
                 />
               </FadeIn>
             ))}

@@ -79,7 +79,7 @@ export default function Podcasts() {
             className="absolute -right-16 bottom-0 w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] text-[var(--color-yellow)] opacity-[0.06] pointer-events-none"
           />
           <div className="relative z-10 w-full mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16 pt-24">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl text-center md:text-left">
               <div className="hero-fade-1">
                 <Rhombus className="text-[var(--color-yellow)] w-8 h-8 mb-8" />
               </div>
@@ -89,7 +89,7 @@ export default function Podcasts() {
               <p className="lead text-[var(--color-stone)] mb-10 max-w-xl hero-fade-3">
                 We sit down with architects, clients, educators and business leaders to explore the ideas, challenges and opportunities shaping the built environment.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 hero-fade-4">
+              <div className="flex flex-col sm:flex-row gap-4 hero-fade-4 items-center sm:items-start">
                 <Button variant="primary" size="lg" asChild>
                   <a href="#">Listen on Spotify</a>
                 </Button>
@@ -211,19 +211,21 @@ export default function Podcasts() {
         </SectionWrapper>
 
         {/* ── Section 5: CTA Band ──────────────────────────────────────── */}
-        <SectionWrapper background="graphite" className="py-20 md:py-[120px]">
-          <FadeIn>
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-[var(--color-white)] mb-6">Want to be a guest on the podcast?</h2>
-              <p className="lead text-[var(--color-stone)] mb-10">
-                We're always looking for interesting voices and perspectives. If you have something worth saying about design, architecture or the built environment, we'd love to have the conversation.
-              </p>
-              <Button variant="primary" size="lg" asChild>
-                <Link href="/contact">Get in Touch</Link>
-              </Button>
-            </div>
-          </FadeIn>
-        </SectionWrapper>
+        <section className="w-full py-20 md:py-[120px] bg-[var(--color-yellow)]">
+          <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
+            <FadeIn>
+              <div className="text-center max-w-2xl mx-auto">
+                <h2 className="text-[var(--color-graphite)] mb-6">Want to be a guest on the podcast?</h2>
+                <p className="lead text-[var(--color-graphite)]/80 mb-10">
+                  We're always looking for interesting voices and perspectives. If you have something worth saying about design, architecture or the built environment, we'd love to have the conversation.
+                </p>
+                <Button variant="secondary" size="lg" asChild>
+                  <Link href="/contact">Get in Touch</Link>
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

@@ -212,7 +212,7 @@ export default function WhatWeDo() {
           />
 
           <div className="relative z-10 w-full mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16 pt-24">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl text-center md:text-left">
               <div className="hero-fade-1">
                 <Rhombus className="text-[var(--color-yellow)] w-8 h-8 mb-8" />
               </div>
@@ -222,7 +222,7 @@ export default function WhatWeDo() {
               <p className="lead text-[var(--color-stone)] mb-10 max-w-2xl hero-fade-3">
                 Architecture is more than buildings. It is about understanding what people need from a place — and designing environments that deliver it.
               </p>
-              <div className="hero-fade-4 flex flex-wrap gap-4">
+              <div className="hero-fade-4 flex flex-wrap gap-4 items-center sm:items-start">
                 <Button variant="primary" size="lg" asChild>
                   <Link href="/contact">Start a Conversation</Link>
                 </Button>

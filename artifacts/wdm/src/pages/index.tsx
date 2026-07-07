@@ -91,7 +91,7 @@ export default function Home() {
           />
 
           <div className="relative z-10 w-full mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16 pt-24">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl text-center md:text-left">
               <div className="hero-fade-1">
                 <Rhombus className="text-[var(--color-yellow)] w-8 h-8 mb-8" />
               </div>
@@ -101,7 +101,7 @@ export default function Home() {
               <p className="lead text-[var(--color-stone)] mb-10 max-w-xl hero-fade-3">
                 We create thoughtful architecture that considers how people live, learn, work and connect.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 hero-fade-4">
+              <div className="flex flex-col sm:flex-row gap-4 hero-fade-4 items-center sm:items-start">
                 <Button variant="primary" size="lg" asChild>
                   <Link href="/contact">Start a Conversation</Link>
                 </Button>

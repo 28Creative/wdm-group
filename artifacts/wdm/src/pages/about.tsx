@@ -229,7 +229,7 @@ export default function About() {
           />
 
           <div className="relative z-10 w-full mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16 pt-24">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl text-center md:text-left">
               <div className="hero-fade-1">
                 <Rhombus className="text-[var(--color-yellow)] w-8 h-8 mb-8" />
               </div>
