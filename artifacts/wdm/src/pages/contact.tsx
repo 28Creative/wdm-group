@@ -277,9 +277,18 @@ export default function Contact() {
                     Connect
                   </p>
                   <div className="space-y-3">
+                    {/* Replace with individual LinkedIn URLs when provided */}
                     <a href="#" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
                       <Linkedin className="w-4 h-4 text-[var(--color-gold)]" />
-                      LinkedIn
+                      Connect with Martin
+                    </a>
+                    <a href="#" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
+                      <Linkedin className="w-4 h-4 text-[var(--color-gold)]" />
+                      Connect with Simon
+                    </a>
+                    <a href="#" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
+                      <Linkedin className="w-4 h-4 text-[var(--color-gold)]" />
+                      Connect with Parminder
                     </a>
                     <a href="#" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
                       <Globe className="w-4 h-4 text-[var(--color-gold)]" />

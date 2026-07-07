@@ -127,7 +127,7 @@ describe("Contact page — studio details", () => {
 
   it("renders the phone number", () => {
     render(<Contact />)
-    expect(screen.getByText("01543 886175")).toBeInTheDocument()
+    expect(screen.getAllByText("01543 886175").length).toBeGreaterThanOrEqual(1)
   })
 })
 

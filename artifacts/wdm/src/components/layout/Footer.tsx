@@ -13,7 +13,7 @@ export function Footer() {
               Because architecture is fundamentally about the human impact of the spaces we inhabit. Why design matters, above all else.
             </p>
           </div>
-          
+
           <div>
             <h4 className="font-heading font-semibold text-white mb-6 text-lg">Practice</h4>
             <ul className="space-y-4 text-sm">
@@ -23,7 +23,7 @@ export function Footer() {
               <li><Link href="/sector-expertise" className="hover:text-[var(--color-yellow)] transition-colors">Sector Expertise</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-heading font-semibold text-white mb-6 text-lg">Thinking</h4>
             <ul className="space-y-4 text-sm">
@@ -35,13 +35,51 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-white mb-6 text-lg">Contact</h4>
             <ul className="space-y-4 text-sm">
-              <li>123 Architecture Way<br/>Design District<br/>London, E1 8AB</li>
-              <li><a href="mailto:hello@wdm-architects.com" className="hover:text-[var(--color-yellow)] transition-colors">hello@wdm-architects.com</a></li>
-              <li><a href="tel:+442012345678" className="hover:text-[var(--color-yellow)] transition-colors">+44 (0)20 1234 5678</a></li>
+              <li>
+                Shire House<br />
+                Birmingham Road<br />
+                Lichfield, WS14 9BW
+              </li>
+              <li>
+                <a href="tel:01543886175" className="hover:text-[var(--color-yellow)] transition-colors">
+                  01543 886175
+                </a>
+              </li>
+              <li>
+                <a href="tel:07849750978" className="hover:text-[var(--color-yellow)] transition-colors">
+                  07849 750 978
+                </a>
+              </li>
+              <li>
+                <a href="mailto:hello@wdm-architects.com" className="hover:text-[var(--color-yellow)] transition-colors">
+                  hello@wdm-architects.com
+                </a>
+              </li>
+              {/* VAT Number: TO BE PROVIDED BY CLIENT */}
+              <li className="text-xs text-[var(--color-stone)]/60 pt-1">
+                Company Registration No. 16337075
+              </li>
             </ul>
           </div>
         </div>
-        
+
+        {/* Accreditations */}
+        <div className="border-t border-[var(--color-stone)]/20 pt-8 pb-8">
+          <p className="text-xs font-semibold tracking-widest uppercase text-[var(--color-stone)]/60 mb-4">
+            Accreditations
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {/* Replace with RIBA Chartered Practice logo when provided by client */}
+            <span className="inline-flex items-center px-3 py-1.5 text-xs font-semibold tracking-wider uppercase border border-[var(--color-yellow)] text-[var(--color-stone)]">
+              RIBA Chartered Practice
+            </span>
+            {/* Replace with ARB Registered logo when provided by client */}
+            <span className="inline-flex items-center px-3 py-1.5 text-xs font-semibold tracking-wider uppercase border border-[var(--color-yellow)] text-[var(--color-stone)]">
+              ARB Registered
+            </span>
+          </div>
+        </div>
+
         <div className="border-t border-[var(--color-stone)]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-80">
           <p>&copy; {new Date().getFullYear()} Why Design Matters. All rights reserved.</p>
           <div className="flex gap-6">
