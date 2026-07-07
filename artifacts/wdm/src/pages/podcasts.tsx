@@ -5,52 +5,7 @@ import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Rhombus } from "@/components/brand/Rhombus";
-import { ArrowRight, Clock, Mic } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-interface Episode {
-  number: string;
-  title: string;
-  guest: string;
-  summary: string;
-  duration: string;
-  imageSrc: string;
-}
-
-const EPISODES: Episode[] = [
-  {
-    number: "EP. 12",
-    title: "What does great school design actually look like?",
-    guest: "Dr Emma Clarke, Education Consultant",
-    summary: "Emma has spent 20 years advising on school building programmes. In this conversation we dig into the gap between what research says and what schools actually get — and why the best buildings are the ones nobody notices.",
-    duration: "48 min",
-    imageSrc: "/images/project-1.png",
-  },
-  {
-    number: "EP. 11",
-    title: "The lobby problem — first impressions in hospitality",
-    guest: "Marco Ricci, Hospitality Director",
-    summary: "Marco has opened hotels across Europe and Asia. We talk about why the lobby is still the most important 30 seconds of any hotel stay, and what designers routinely get wrong about it.",
-    duration: "41 min",
-    imageSrc: "/images/project-2.png",
-  },
-  {
-    number: "EP. 10",
-    title: "Embodied carbon: where do we actually start?",
-    guest: "Priya Nair, Sustainability Engineer",
-    summary: "A no-nonsense conversation about embodied carbon — what it is, why it matters more than most developers currently think, and the practical steps practices of any size can take right now.",
-    duration: "55 min",
-    imageSrc: "/images/project-3.png",
-  },
-  {
-    number: "EP. 09",
-    title: "Designing homes people actually want to live in",
-    guest: "Tom Ashworth, Residential Developer",
-    summary: "Tom has delivered over 2,000 homes across the Midlands. We talk about the false economy of value engineering, why placemaking matters, and what he wishes architects understood about viability.",
-    duration: "44 min",
-    imageSrc: "/images/project-1.png",
-  },
-];
+import { ArrowRight, Mic } from "lucide-react";
 
 const PLATFORMS = [
   { name: "Spotify", href: "#" },
@@ -147,70 +102,37 @@ export default function Podcasts() {
           </FadeIn>
         </SectionWrapper>
 
-        {/* ── Section 3: Latest Episodes ───────────────────────────────── */}
+        {/* ── Section 3: Coming Soon ───────────────────────────────────── */}
         <SectionWrapper background="stone" className="py-20 md:py-[120px]">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-[var(--color-gold)] mb-4">
-              Recent Episodes
-            </p>
-            <h2 className="mb-12 text-[var(--color-graphite)]">Latest Episodes.</h2>
-          </FadeIn>
-          <div className="space-y-4">
-            {EPISODES.map((ep, i) => (
-              <FadeIn key={ep.number} delay={i * 60}>
-                <div className="group flex flex-col sm:flex-row gap-0 bg-[var(--color-white)] hover:bg-[var(--color-stone)] transition-colors border border-transparent hover:border-[var(--color-yellow)]">
-                  <div className="sm:w-32 md:w-40 shrink-0 overflow-hidden">
-                    <img
-                      src={ep.imageSrc}
-                      alt={ep.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-40 sm:h-full object-cover hover-image-zoom transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="flex flex-col flex-grow p-6 md:p-8 justify-between">
-                    <div>
-                      <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-gold)] mb-2 block">
-                        {ep.number}
-                      </span>
-                      <h3 className="font-heading font-bold text-xl mb-1 text-[var(--color-graphite)] group-hover:text-[var(--color-gold)] transition-colors">
-                        {ep.title}
-                      </h3>
-                      <p className="text-sm text-[var(--color-graphite)]/50 mb-3 italic">{ep.guest}</p>
-                      <p className="text-sm text-[var(--color-graphite)]/75 leading-relaxed">{ep.summary}</p>
-                    </div>
-                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-[var(--color-graphite)]/10">
-                      <span className="flex items-center gap-1.5 text-xs text-[var(--color-graphite)]/50">
-                        <Clock className="w-3.5 h-3.5" />
-                        {ep.duration}
-                      </span>
-                      <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
-                        Listen Now →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </SectionWrapper>
-
-        {/* ── Section 4: Episode Archive Teaser ───────────────────────── */}
-        <SectionWrapper background="white" className="py-20 md:py-[120px]">
-          <FadeIn>
             <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-[var(--color-graphite)] mb-6">More Episodes.</h2>
-              <p className="lead text-[var(--color-graphite)]/80 mb-10">
-                We publish new episodes regularly. Browse the full archive to find conversations on the topics that matter most to you.
+              <p className="text-xs font-semibold tracking-widest uppercase text-[var(--color-yellow)] mb-6">
+                Coming Soon
               </p>
-              <Button variant="primary" size="lg" asChild>
-                <a href="#">Browse All Episodes</a>
-              </Button>
+              <h2 className="text-[var(--color-graphite)] mb-6">
+                The podcast is coming soon.
+              </h2>
+              <p className="lead text-[var(--color-graphite)]/80 mb-10">
+                We are putting the finishing touches to our first episodes. Subscribe now so you don't miss them.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+                <span className="flex items-center gap-2 px-5 py-2.5 border border-[var(--color-graphite)]/20 text-sm font-medium text-[var(--color-graphite)]/50 select-none">
+                  <Mic className="w-4 h-4" />
+                  Spotify
+                </span>
+                <span className="flex items-center gap-2 px-5 py-2.5 border border-[var(--color-graphite)]/20 text-sm font-medium text-[var(--color-graphite)]/50 select-none">
+                  <Mic className="w-4 h-4" />
+                  Apple Podcasts
+                </span>
+              </div>
+              <p className="text-xs font-semibold tracking-widest uppercase text-[var(--color-graphite)]/40">
+                Links coming soon
+              </p>
             </div>
           </FadeIn>
         </SectionWrapper>
 
-        {/* ── Section 5: CTA Band ──────────────────────────────────────── */}
+        {/* ── Section 4: CTA Band ──────────────────────────────────────── */}
         <section className="w-full py-20 md:py-[120px] bg-[var(--color-yellow)]">
           <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
             <FadeIn>

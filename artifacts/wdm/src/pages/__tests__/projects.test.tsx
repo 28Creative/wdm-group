@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import { describe, it, expect, vi } from "vitest"
 import Projects from "../projects"
 
@@ -38,45 +38,32 @@ describe("Projects page — smoke render", () => {
   })
 })
 
-describe("Projects page — filter tabs", () => {
-  it("renders all filter tabs", () => {
+describe("Projects page — holding state", () => {
+  it("renders no filter tab buttons", () => {
     render(<Projects />)
-    expect(screen.getByRole("button", { name: "All" })).toBeInTheDocument()
-    expect(screen.getByRole("button", { name: "Education" })).toBeInTheDocument()
-    expect(screen.getByRole("button", { name: "Commercial" })).toBeInTheDocument()
-    expect(screen.getByRole("button", { name: "Residential" })).toBeInTheDocument()
-    expect(screen.getByRole("button", { name: "Hospitality" })).toBeInTheDocument()
+    expect(screen.queryByRole("button", { name: "All" })).not.toBeInTheDocument()
+    expect(screen.queryByRole("button", { name: "Education" })).not.toBeInTheDocument()
+    expect(screen.queryByRole("button", { name: "Commercial" })).not.toBeInTheDocument()
   })
 
-  it("shows all 6 projects by default", () => {
+  it("renders the Coming Soon label", () => {
     render(<Projects />)
-    const links = screen.getAllByText("View Project →")
-    expect(links).toHaveLength(6)
+    expect(screen.getByText("Coming Soon")).toBeInTheDocument()
   })
 
-  it("filters to only Education projects when Education tab is clicked", () => {
+  it("renders the holding state heading", () => {
     render(<Projects />)
-    fireEvent.click(screen.getByRole("button", { name: "Education" }))
-    expect(screen.getByText("Ashfield Academy")).toBeInTheDocument()
-    expect(screen.getByText("Redwood Primary School")).toBeInTheDocument()
-    expect(screen.queryByText("One Meridian Square")).not.toBeInTheDocument()
-    expect(screen.queryByText("Riverside Quarter")).not.toBeInTheDocument()
+    expect(screen.getByText("Our project portfolio is on its way.")).toBeInTheDocument()
   })
 
-  it("filters to only Commercial projects when Commercial tab is clicked", () => {
+  it("renders the holding state body copy", () => {
     render(<Projects />)
-    fireEvent.click(screen.getByRole("button", { name: "Commercial" }))
-    expect(screen.getByText("One Meridian Square")).toBeInTheDocument()
-    expect(screen.getByText("Highfield Business Park")).toBeInTheDocument()
-    expect(screen.queryByText("Ashfield Academy")).not.toBeInTheDocument()
+    expect(screen.getByText(/compiling our project case studies/i)).toBeInTheDocument()
   })
 
-  it("shows all projects again when All tab is clicked after filtering", () => {
+  it("renders no project cards", () => {
     render(<Projects />)
-    fireEvent.click(screen.getByRole("button", { name: "Education" }))
-    fireEvent.click(screen.getByRole("button", { name: "All" }))
-    const links = screen.getAllByText("View Project →")
-    expect(links).toHaveLength(6)
+    expect(screen.queryByText("View Project →")).not.toBeInTheDocument()
   })
 })
 

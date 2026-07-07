@@ -56,34 +56,40 @@ describe("Podcasts page — about section", () => {
     expect(screen.getByText("About the Show")).toBeInTheDocument()
   })
 
-  it("renders platform links", () => {
+  it("renders platform links in the about section", () => {
     render(<Podcasts />)
     expect(screen.getAllByText("Spotify").length).toBeGreaterThanOrEqual(1)
-    expect(screen.getByText("Apple Podcasts")).toBeInTheDocument()
+    expect(screen.getAllByText("Apple Podcasts").length).toBeGreaterThanOrEqual(1)
     expect(screen.getByText("Google Podcasts")).toBeInTheDocument()
     expect(screen.getByText("Amazon Music")).toBeInTheDocument()
   })
 })
 
-describe("Podcasts page — episode list", () => {
-  it("renders 4 episode cards", () => {
+describe("Podcasts page — coming soon", () => {
+  it("renders the Coming Soon label", () => {
     render(<Podcasts />)
-    const epLabels = screen.getAllByText(/ep\. \d+/i)
-    expect(epLabels).toHaveLength(4)
+    expect(screen.getByText("Coming Soon")).toBeInTheDocument()
   })
 
-  it("renders 'Listen Now →' for each episode", () => {
+  it("renders the coming soon heading", () => {
     render(<Podcasts />)
-    const listenLinks = screen.getAllByText("Listen Now →")
-    expect(listenLinks).toHaveLength(4)
+    expect(screen.getByText("The podcast is coming soon.")).toBeInTheDocument()
   })
 
-  it("renders each episode title", () => {
+  it("renders the subscribe body copy", () => {
     render(<Podcasts />)
-    expect(screen.getByText("What does great school design actually look like?")).toBeInTheDocument()
-    expect(screen.getByText("The lobby problem — first impressions in hospitality")).toBeInTheDocument()
-    expect(screen.getByText("Embodied carbon: where do we actually start?")).toBeInTheDocument()
-    expect(screen.getByText("Designing homes people actually want to live in")).toBeInTheDocument()
+    expect(screen.getByText(/finishing touches to our first episodes/i)).toBeInTheDocument()
+  })
+
+  it("renders the 'Links coming soon' note", () => {
+    render(<Podcasts />)
+    expect(screen.getByText(/links coming soon/i)).toBeInTheDocument()
+  })
+
+  it("renders no episode cards", () => {
+    render(<Podcasts />)
+    expect(screen.queryAllByText(/ep\. \d+/i)).toHaveLength(0)
+    expect(screen.queryByText("Listen Now →")).not.toBeInTheDocument()
   })
 })
 
