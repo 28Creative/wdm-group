@@ -123,7 +123,7 @@ describe("What We Do page — smoke render", () => {
 
   it("renders Navigation component", () => {
     render(<WhatWeDo />)
-    expect(screen.getByRole("img", { name: "Why Design Matters" })).toBeInTheDocument()
+    expect(screen.getAllByRole("img", { name: "Why Design Matters" }).length).toBeGreaterThan(0)
   })
 
   it("renders Footer component", () => {

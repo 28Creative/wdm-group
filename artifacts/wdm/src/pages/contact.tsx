@@ -62,10 +62,18 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function encode(data: Record<string, string>) {
+  return Object.entries(data)
+    .map(([k, v]) => encodeURIComponent(k) + "=" + encodeURIComponent(v))
+    .join("&");
+}
+
 export default function Contact() {
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     const { name, value } = e.target;
@@ -88,10 +96,25 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (validate()) {
+    if (!validate()) return;
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...form }),
+      });
+      if (!res.ok) throw new Error("Server error");
       setSubmitted(true);
+    } catch {
+      setSubmitError(
+        "Something went wrong — please try again or email us directly at Hello@wdm-group.co.uk"
+      );
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -132,7 +155,17 @@ export default function Contact() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-6">
+                <form
+                  onSubmit={handleSubmit}
+                  noValidate
+                  className="space-y-6"
+                  name="contact"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                >
+                  {/* Required hidden fields for Netlify Forms */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="bot-field" />
                   {/* Name */}
                   <div>
                     <label htmlFor="name" className={labelClass}>Name *</label>
@@ -238,9 +271,19 @@ export default function Contact() {
                     {errors.message && <p className={errorClass}>{errors.message}</p>}
                   </div>
 
-                  <Button type="submit" variant="primary" size="lg" className="w-full">
-                    Send Message
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="lg"
+                    className="w-full"
+                    disabled={submitting}
+                  >
+                    {submitting ? "Sending…" : "Send Message"}
                   </Button>
+
+                  {submitError && (
+                    <p className="text-sm text-red-600 mt-2">{submitError}</p>
+                  )}
                 </form>
               )}
             </FadeIn>

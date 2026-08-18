@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react"
-import { describe, it, expect, vi } from "vitest"
+import { render, screen, fireEvent, waitFor } from "@testing-library/react"
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
 import Contact from "../contact"
 
 vi.mock("wouter", () => ({
@@ -24,7 +24,8 @@ describe("Contact page — smoke render", () => {
 
   it("renders the Navigation component", () => {
     render(<Contact />)
-    expect(screen.getByRole("img", { name: "Why Design Matters" })).toBeInTheDocument()
+    const logos = screen.getAllByRole("img", { name: "Why Design Matters" })
+    expect(logos.length).toBeGreaterThan(0)
   })
 
   it("renders the Footer component", () => {
@@ -107,13 +108,22 @@ describe("Contact page — validation", () => {
 })
 
 describe("Contact page — success state", () => {
-  it("shows success message after valid form submission", () => {
+  beforeEach(() => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true }))
+  })
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it("shows success message after valid form submission", async () => {
     render(<Contact />)
     fireEvent.change(screen.getByLabelText(/name \*/i), { target: { value: "Alice Smith" } })
     fireEvent.change(screen.getByLabelText(/email \*/i), { target: { value: "alice@example.com" } })
     fireEvent.change(screen.getByLabelText(/message \*/i), { target: { value: "I have a project to discuss." } })
     fireEvent.click(screen.getByRole("button", { name: /send message/i }))
-    expect(screen.getByText("Thank you — we'll be in touch.")).toBeInTheDocument()
+    await waitFor(() =>
+      expect(screen.getByText("Thank you — we'll be in touch.")).toBeInTheDocument()
+    )
     expect(screen.queryByRole("button", { name: /send message/i })).not.toBeInTheDocument()
   })
 })

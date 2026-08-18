@@ -20,5 +20,17 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Static form for Netlify Forms detection (hidden, not shown to users) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="text" name="organisation" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="projectType" />
+      <input type="text" name="sector" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
   </body>
 </html>
