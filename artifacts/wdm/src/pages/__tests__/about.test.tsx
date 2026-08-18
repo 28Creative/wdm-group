@@ -104,7 +104,7 @@ describe("About page — full build", () => {
 
   it("renders the Navigation component", () => {
     render(<About />)
-    expect(screen.getByText("Why Design Matters")).toBeInTheDocument()
+    expect(screen.getByRole("img", { name: "Why Design Matters" })).toBeInTheDocument()
   })
 
   it("renders the Footer component", () => {

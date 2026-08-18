@@ -58,7 +58,7 @@ describe("Navigation — desktop nav links", () => {
   it("renders the brand name link pointing to /", () => {
     render(<Navigation />)
 
-    const brandLink = screen.getByText("Why Design Matters").closest("a")
+    const brandLink = screen.getByRole("img", { name: "Why Design Matters" }).closest("a")
     expect(brandLink).toHaveAttribute("href", "/")
   })
 

@@ -38,10 +38,14 @@ export function Navigation() {
       )}
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-heading font-bold text-xl tracking-tight uppercase group-hover:text-[var(--color-gold)] transition-colors">
-            Why Design Matters
-          </span>
+        <Link href="/" className="flex items-center">
+          <img
+            src="/images/logo-charcoal.svg"
+            alt="Why Design Matters"
+            className="h-8 w-auto"
+            loading="eager"
+            decoding="async"
+          />
         </Link>
 
         {/* Desktop Nav */}

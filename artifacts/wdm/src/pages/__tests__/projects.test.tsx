@@ -24,7 +24,7 @@ describe("Projects page — smoke render", () => {
 
   it("renders the Navigation component", () => {
     render(<Projects />)
-    expect(screen.getByText("Why Design Matters")).toBeInTheDocument()
+    expect(screen.getByRole("img", { name: "Why Design Matters" })).toBeInTheDocument()
   })
 
   it("renders the Footer component", () => {

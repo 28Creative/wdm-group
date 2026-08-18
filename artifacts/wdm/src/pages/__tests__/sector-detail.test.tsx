@@ -61,7 +61,7 @@ describe("Education page", () => {
 
   it("renders the Navigation", () => {
     render(<SectorDetail />)
-    expect(screen.getByText("Why Design Matters")).toBeInTheDocument()
+    expect(screen.getByRole("img", { name: "Why Design Matters" })).toBeInTheDocument()
   })
 
   it("renders the Footer", () => {
