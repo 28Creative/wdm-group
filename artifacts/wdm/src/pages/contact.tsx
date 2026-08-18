@@ -62,12 +62,6 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function encode(data: Record<string, string>) {
-  return Object.entries(data)
-    .map(([k, v]) => encodeURIComponent(k) + "=" + encodeURIComponent(v))
-    .join("&");
-}
-
 export default function Contact() {
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -102,17 +96,19 @@ export default function Contact() {
     setSubmitting(true);
     setSubmitError(null);
     try {
+      const body = new URLSearchParams({
+        "form-name": "contact",
+        ...form,
+      }).toString();
       const res = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...form }),
+        body,
       });
-      if (!res.ok) throw new Error("Server error");
+      if (!res.ok) throw new Error(`Server responded ${res.status}`);
       setSubmitted(true);
     } catch {
-      setSubmitError(
-        "Something went wrong — please try again or email us directly at Hello@wdm-group.co.uk"
-      );
+      setSubmitError("Sorry, something went wrong. Please try again or email us directly at Hello@wdm-group.co.uk.");
     } finally {
       setSubmitting(false);
     }
@@ -156,16 +152,18 @@ export default function Contact() {
                 </div>
               ) : (
                 <form
+                  name="contact"
                   onSubmit={handleSubmit}
                   noValidate
-                  className="space-y-6"
-                  name="contact"
                   data-netlify="true"
-                  data-netlify-honeypot="bot-field"
+                  netlify-honeypot="bot-field"
+                  className="space-y-6"
                 >
-                  {/* Required hidden fields for Netlify Forms */}
                   <input type="hidden" name="form-name" value="contact" />
-                  <input type="hidden" name="bot-field" />
+                  {/* Honeypot — hidden from real users */}
+                  <p className="hidden">
+                    <label>Don't fill this out: <input name="bot-field" /></label>
+                  </p>
                   {/* Name */}
                   <div>
                     <label htmlFor="name" className={labelClass}>Name *</label>
@@ -271,19 +269,13 @@ export default function Contact() {
                     {errors.message && <p className={errorClass}>{errors.message}</p>}
                   </div>
 
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full"
-                    disabled={submitting}
-                  >
+                  {submitError && (
+                    <p className="text-sm text-red-600">{submitError}</p>
+                  )}
+
+                  <Button type="submit" variant="primary" size="lg" className="w-full" disabled={submitting}>
                     {submitting ? "Sending…" : "Send Message"}
                   </Button>
-
-                  {submitError && (
-                    <p className="text-sm text-red-600 mt-2">{submitError}</p>
-                  )}
                 </form>
               )}
             </FadeIn>

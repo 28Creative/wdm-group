@@ -7,6 +7,18 @@
   PORT         = "3000"
   BASE_PATH    = "/"
 
+# ── Netlify Forms ─────────────────────────────────────────────────────────────
+# The contact form at /contact is wired to Netlify Forms via data-netlify="true"
+# on the <form> element and a matching build-time declaration in index.html.
+#
+# After the first deploy, enable email notifications so submissions reach the inbox:
+#   1. Go to Netlify dashboard → your site → Forms → "contact"
+#   2. Click "Form notifications" → "Add notification" → "Email notification"
+#   3. Enter Hello@wdm-group.co.uk as the recipient and save.
+#
+# Netlify's free tier includes this feature; no paid plan is required.
+# ─────────────────────────────────────────────────────────────────────────────
+
 # Redirect all routes to index.html so client-side routing works correctly
 [[redirects]]
   from   = "/*"
