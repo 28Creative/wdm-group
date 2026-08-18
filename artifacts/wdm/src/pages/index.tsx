@@ -76,12 +76,15 @@ export default function Home() {
 
         {/* ── Section 1: Hero ────────────────────────────────────────── */}
         <section className="relative h-screen min-h-[640px] bg-[var(--color-graphite)] flex items-center overflow-hidden">
-          <img
-            src="/images/hero.png"
-            alt=""
-            loading="eager"
-            decoding="async"
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+          <video
+            src="/videos/hero.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
             className="absolute inset-0 w-full h-full object-cover"
+            aria-hidden="true"
           />
           <div className="absolute inset-0 bg-[var(--color-graphite)]/65" />
           {/* Decorative rhombus */}
