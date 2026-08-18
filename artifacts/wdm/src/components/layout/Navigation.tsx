@@ -42,7 +42,7 @@ export function Navigation() {
           <img
             src="/images/logo-charcoal.svg"
             alt="Why Design Matters"
-            className="h-8 w-auto"
+            className="h-16 w-auto"
             loading="eager"
             decoding="async"
           />
