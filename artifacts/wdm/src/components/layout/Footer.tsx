@@ -61,9 +61,11 @@ export function Footer() {
                   hello@wdm-architects.com
                 </a>
               </li>
-              {/* VAT Number: TO BE PROVIDED BY CLIENT */}
               <li className="text-xs text-[var(--color-stone)]/60 pt-1">
-                Company Registration No. 16337075
+                Company No. 16337075 (England &amp; Wales)
+              </li>
+              <li className="text-xs text-[var(--color-stone)]/60">
+                VAT No. 490295766
               </li>
             </ul>
           </div>
