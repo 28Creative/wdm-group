@@ -312,16 +312,15 @@ export default function Contact() {
                     Connect
                   </p>
                   <div className="space-y-3">
-                    {/* Replace with individual LinkedIn URLs when provided */}
-                    <a href="#" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
+                    <a href="https://www.linkedin.com/in/martin-beaumont-4216a24b/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
                       <Linkedin className="w-4 h-4 text-[var(--color-gold)]" />
                       Connect with Martin
                     </a>
-                    <a href="#" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
+                    <a href="https://www.linkedin.com/in/simon-jesson-623b5024/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
                       <Linkedin className="w-4 h-4 text-[var(--color-gold)]" />
                       Connect with Simon
                     </a>
-                    <a href="#" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
+                    <a href="https://www.linkedin.com/in/parminder-degan-1b3bbb16/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-[var(--color-graphite)] hover:text-[var(--color-gold)] transition-colors">
                       <Linkedin className="w-4 h-4 text-[var(--color-gold)]" />
                       Connect with Parminder
                     </a>
