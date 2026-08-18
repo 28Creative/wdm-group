@@ -98,7 +98,7 @@ export const DIRECTORS: DirectorProfile[] = [
     id: "martin",
     name: "Martin Beaumont",
     role: "Director | Architect",
-    imageSrc: "/images/team-1.png",
+    imageSrc: "/images/martin-beaumont.jpg",
     bioExcerpt:
       "Martin leads every project with a listening-first approach, taking time to understand what clients and communities truly need before a single line is drawn.",
     bio: "Martin founded Why Design Matters on the belief that architecture should begin with people, not drawings. With decades of experience across education, commercial and community projects, he brings a calm, considered approach to every brief — asking the questions that reveal what a project is really about before the design process begins.",
@@ -115,7 +115,7 @@ export const DIRECTORS: DirectorProfile[] = [
     id: "simon",
     name: "Simon Jesson",
     role: "Director | Architect",
-    imageSrc: "/images/team-2.png",
+    imageSrc: "/images/simon-jesson.jpg",
     bioExcerpt:
       "Simon translates ideas into buildable, deliverable solutions — bridging the gap between creative ambition and practical reality.",
     bio: "Simon is the bridge between creative ambition and practical delivery. Where others see constraints, Simon sees the puzzle — finding ways to achieve more with what's available, and ensuring every project is as buildable as it is beautiful.",
@@ -132,7 +132,7 @@ export const DIRECTORS: DirectorProfile[] = [
     id: "parminder",
     name: "Parminder Degan",
     role: "Director | Architect",
-    imageSrc: "/images/team-3.png",
+    imageSrc: "/images/parminder-degan.jpg",
     bioExcerpt:
       "Parminder designs from the inside out, considering how spaces feel to the people who move through them every day.",
     bio: "Parminder approaches every project from the inside out — starting with the experience of the people who will use the space and working outward from there. Her work is characterised by sensitivity, detail and a deep understanding of how environments shape mood, behaviour and belonging.",

@@ -45,21 +45,21 @@ const PROJECTS = [
 
 const TEAM = [
   {
-    image: "/images/team-1.png",
+    image: "/images/martin-beaumont.jpg",
     name: "Martin Beaumont",
     role: "Director | Architect",
     bio: "Martin leads every project with a listening-first approach, taking time to understand what clients and communities truly need before a single line is drawn.",
     loading: "eager" as const,
   },
   {
-    image: "/images/team-2.png",
+    image: "/images/simon-jesson.jpg",
     name: "Simon Jesson",
     role: "Director | Architect",
     bio: "Simon translates ideas into buildable, deliverable solutions — bridging the gap between creative ambition and practical reality.",
     loading: "lazy" as const,
   },
   {
-    image: "/images/team-3.png",
+    image: "/images/parminder-degan.jpg",
     name: "Parminder Degan",
     role: "Director | Architect",
     bio: "Parminder designs from the inside out, considering how spaces feel to the people who move through them every day.",
