@@ -6,8 +6,14 @@ export function Footer() {
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6 lg:col-span-1">
-            <Link href="/" className="inline-block font-heading font-bold text-2xl tracking-tight text-[var(--color-white)] uppercase">
-              WDM
+            <Link href="/" className="inline-block">
+              <img
+                src="/images/logo-white.svg"
+                alt="Why Design Matters"
+                className="h-16 w-auto"
+                loading="lazy"
+                decoding="async"
+              />
             </Link>
             <p className="text-sm leading-relaxed max-w-sm">
               Because architecture is fundamentally about the human impact of the spaces we inhabit. Why design matters, above all else.
