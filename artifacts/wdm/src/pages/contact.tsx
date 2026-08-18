@@ -156,7 +156,7 @@ export default function Contact() {
                   onSubmit={handleSubmit}
                   noValidate
                   data-netlify="true"
-                  netlify-honeypot="bot-field"
+                  data-netlify-honeypot="bot-field"
                   className="space-y-6"
                 >
                   <input type="hidden" name="form-name" value="contact" />
@@ -300,10 +300,10 @@ export default function Contact() {
                       <Phone className="w-4 h-4 text-[var(--color-gold)] shrink-0" />
                       07849 750 978
                     </p>
-                    <p className="flex items-center gap-3 text-sm text-[var(--color-graphite)]/80">
+                    <a href="mailto:Hello@wdm-group.co.uk" className="flex items-center gap-3 text-sm text-[var(--color-graphite)]/80 hover:text-[var(--color-gold)] transition-colors">
                       <Mail className="w-4 h-4 text-[var(--color-gold)] shrink-0" />
-                      <span className="italic text-[var(--color-graphite)]/50">Email address to be confirmed</span>
-                    </p>
+                      Hello@wdm-group.co.uk
+                    </a>
                   </div>
                 </div>
 
