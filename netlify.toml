@@ -1,9 +1,11 @@
 [build]
-  command   = "pnpm --filter @workspace/wdm run build"
-  publish   = "artifacts/wdm/dist"
+  command = "pnpm --filter @workspace/wdm run build"
+  publish = "artifacts/wdm/dist/public"
 
 [build.environment]
   NODE_VERSION = "20"
+  PORT         = "3000"
+  BASE_PATH    = "/"
 
 # Redirect all routes to index.html so client-side routing works correctly
 [[redirects]]
