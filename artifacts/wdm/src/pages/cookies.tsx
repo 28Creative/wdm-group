@@ -18,7 +18,7 @@ export default function CookiePolicy() {
 
       <h2>2. Essential Technical Processing</h2>
       <p>
-        Our website relies on hosting and security infrastructure (such as Netlify) to ensure the site is delivered quickly and safely to your browser. These underlying platforms may automatically process technical data—such as IP addresses or basic network requests—and may use strictly necessary functional mechanisms or session tokens to provide security, prevent fraud, and maintain network reliability. These operations are essential to the functioning of the website.
+        Our website relies on hosting and security infrastructure (such as Netlify) to ensure the site is delivered quickly and safely to your browser. These underlying platforms may automatically process technical data, such as IP addresses or basic network requests, and may use strictly necessary functional mechanisms or session tokens to provide security, prevent fraud, and maintain network reliability. These operations are essential to the functioning of the website.
       </p>
 
       <h2>3. Third-Party Links</h2>
@@ -28,7 +28,7 @@ export default function CookiePolicy() {
 
       <h2>4. Changes to This Policy</h2>
       <p>
-        If we introduce new features to our website that require the use of optional cookies—such as advanced analytics or user preferences—we will update this policy accordingly and ensure any required consent mechanisms are put in place before such cookies are used.
+        If we introduce new features to our website that require the use of optional cookies, such as advanced analytics or user preferences, we will update this policy accordingly and ensure any required consent mechanisms are put in place before such cookies are used.
       </p>
 
       <h2>5. Contact Us</h2>

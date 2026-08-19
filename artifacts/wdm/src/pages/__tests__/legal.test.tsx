@@ -50,4 +50,12 @@ describe("Legal Pages", () => {
       expect(screen.getAllByText(/490295766/i).length).toBeGreaterThan(0);
     });
   });
+
+  it("does not use em dashes or en dashes in visible legal-page copy", () => {
+    for (const Page of [PrivacyPolicy, CookiePolicy, TermsOfService]) {
+      const { unmount } = render(<Page />);
+      expect(document.body.textContent).not.toMatch(/[—–]/);
+      unmount();
+    }
+  });
 });

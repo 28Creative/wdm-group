@@ -14,7 +14,7 @@ export default function TermsOfService() {
 
       <h2>1. Website Information vs. Professional Appointments</h2>
       <p>
-        The content on this website is provided for general information purposes only. While we outline our professional capabilities—including Architecture &amp; Design, Feasibility &amp; Development Insight, Planning &amp; Project Navigation, and Sustainable &amp; Responsible Design—nothing on this website constitutes formal professional advice or an offer to contract.
+        The content on this website is provided for general information purposes only. While we outline our professional capabilities, including Architecture &amp; Design, Feasibility &amp; Development Insight, Planning &amp; Project Navigation, and Sustainable &amp; Responsible Design, nothing on this website constitutes formal professional advice or an offer to contract.
       </p>
       <p>
         If you wish to engage Why Design Matters for architectural services, such engagements are subject to a separate, formal professional appointment contract outlining specific scopes, fees, and responsibilities.
