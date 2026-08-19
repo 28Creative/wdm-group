@@ -57,8 +57,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@wdm-architects.com" className="hover:text-[var(--color-yellow)] transition-colors">
-                  hello@wdm-architects.com
+                <a href="mailto:hello@wdm-group.co.uk" className="hover:text-[var(--color-yellow)] transition-colors">
+                  hello@wdm-group.co.uk
                 </a>
               </li>
               <li className="text-xs text-[var(--color-stone)]/60 pt-1">
@@ -90,8 +90,9 @@ export function Footer() {
 
         <div className="border-t border-[var(--color-stone)]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-80">
           <p>&copy; {new Date().getFullYear()} Why Design Matters. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>

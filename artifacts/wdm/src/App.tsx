@@ -13,6 +13,9 @@ import Projects from "@/pages/projects";
 import Insights from "@/pages/insights";
 import Podcasts from "@/pages/podcasts";
 import Contact from "@/pages/contact";
+import PrivacyPolicy from "@/pages/privacy";
+import CookiePolicy from "@/pages/cookies";
+import TermsOfService from "@/pages/terms";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -25,7 +28,7 @@ function ScrollToTop() {
   return null;
 }
 
-function Router() {
+export function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -37,6 +40,9 @@ function Router() {
       <Route path="/insights" component={Insights} />
       <Route path="/podcasts" component={Podcasts} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/cookies" component={CookiePolicy} />
+      <Route path="/terms" component={TermsOfService} />
       <Route component={NotFound} />
     </Switch>
   );
