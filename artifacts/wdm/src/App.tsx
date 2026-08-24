@@ -17,6 +17,8 @@ import PrivacyPolicy from "@/pages/privacy";
 import CookiePolicy from "@/pages/cookies";
 import TermsOfService from "@/pages/terms";
 import NotFound from "@/pages/not-found";
+import ComingSoon from "@/pages/coming-soon";
+import { SITE_MODE, type SiteMode } from "@/lib/site-mode";
 
 const queryClient = new QueryClient();
 
@@ -48,7 +50,7 @@ export function Router() {
   );
 }
 
-function App() {
+function LiveSite() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -60,6 +62,18 @@ function App() {
       </TooltipProvider>
     </QueryClientProvider>
   );
+}
+
+export function AppContent({ siteMode }: { siteMode: SiteMode }) {
+  if (siteMode === "coming-soon") {
+    return <ComingSoon />;
+  }
+
+  return <LiveSite />;
+}
+
+function App() {
+  return <AppContent siteMode={SITE_MODE} />;
 }
 
 export default App;
