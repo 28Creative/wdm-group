@@ -19,4 +19,12 @@ describe("Footer", () => {
     expect(screen.getByRole("link", { name: /cookie policy/i })).toHaveAttribute("href", "/cookies");
     expect(screen.getByRole("link", { name: /terms of service/i })).toHaveAttribute("href", "/terms");
   });
+
+  it("renders the official RIBA Chartered Practice logo", () => {
+    render(<Footer />);
+    const ribaLogo = screen.getByRole("img", { name: "RIBA Chartered Practice" });
+
+    expect(ribaLogo).toHaveAttribute("src", "/images/riba-chartered-practice.png");
+    expect(screen.queryByText("RIBA Chartered Practice")).not.toBeInTheDocument();
+  });
 });

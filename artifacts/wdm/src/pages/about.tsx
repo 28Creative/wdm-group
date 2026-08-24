@@ -84,6 +84,12 @@ interface DirectorProfile {
   name: string;
   role: string;
   imageSrc: string;
+  accreditations: {
+    id: string;
+    imageSrc: string;
+    alt: string;
+    isSquare?: boolean;
+  }[];
   bioExcerpt: string;
   bio: string;
   superpower: string;
@@ -99,6 +105,13 @@ export const DIRECTORS: DirectorProfile[] = [
     name: "Martin Beaumont",
     role: "Director | Architect",
     imageSrc: "/images/martin-beaumont.jpg",
+    accreditations: [
+      {
+        id: "arb",
+        imageSrc: "/images/arb-martin-beaumont.png",
+        alt: "Architects Registration Board registration mark for Martin Beaumont, registration number 063146I",
+      },
+    ],
     bioExcerpt:
       "Martin leads every project with a listening-first approach, taking time to understand what clients and communities truly need before a single line is drawn.",
     bio: "Martin founded Why Design Matters on the belief that architecture should begin with people, not drawings. With decades of experience across education, commercial and community projects, he brings a calm, considered approach to every brief — asking the questions that reveal what a project is really about before the design process begins.",
@@ -116,6 +129,19 @@ export const DIRECTORS: DirectorProfile[] = [
     name: "Simon Jesson",
     role: "Director | Architect",
     imageSrc: "/images/simon-jesson.jpg",
+    accreditations: [
+      {
+        id: "arb",
+        imageSrc: "/images/arb-simon-jesson.png",
+        alt: "Architects Registration Board registration mark for Simon Jesson, registration number 065826J",
+      },
+      {
+        id: "passive-house",
+        imageSrc: "/images/passive-house-simon-jesson.png",
+        alt: "Certified Passive House Consultant credential for Simon Jesson",
+        isSquare: true,
+      },
+    ],
     bioExcerpt:
       "Simon translates ideas into buildable, deliverable solutions — bridging the gap between creative ambition and practical reality.",
     bio: "Simon is the bridge between creative ambition and practical delivery. Where others see constraints, Simon sees the puzzle — finding ways to achieve more with what's available, and ensuring every project is as buildable as it is beautiful.",
@@ -133,6 +159,13 @@ export const DIRECTORS: DirectorProfile[] = [
     name: "Parminder Degan",
     role: "Director | Architect",
     imageSrc: "/images/parminder-degan.jpg",
+    accreditations: [
+      {
+        id: "arb",
+        imageSrc: "/images/arb-parminder-degan.png",
+        alt: "Architects Registration Board registration mark for Parminder Degan, registration number 076919C",
+      },
+    ],
     bioExcerpt:
       "Parminder designs from the inside out, considering how spaces feel to the people who move through them every day.",
     bio: "Parminder approaches every project from the inside out — starting with the experience of the people who will use the space and working outward from there. Her work is characterised by sensitivity, detail and a deep understanding of how environments shape mood, behaviour and belonging.",
@@ -184,6 +217,31 @@ function DirectorModal({ director }: { director: DirectorProfile }) {
         <p className="text-sm leading-relaxed text-[var(--color-graphite)]/80 mb-8">
           {director.bio}
         </p>
+
+        <section className="mb-8" aria-labelledby={`accreditations-${director.id}`}>
+          <h3
+            id={`accreditations-${director.id}`}
+            className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gold)] mb-3"
+          >
+            Professional Accreditations
+          </h3>
+          <div className="flex flex-wrap items-center gap-3">
+            {director.accreditations.map((accreditation) => (
+              <div
+                key={accreditation.id}
+                className="flex h-20 items-center rounded-sm border border-[var(--color-graphite)]/15 bg-white p-2"
+              >
+                <img
+                  src={accreditation.imageSrc}
+                  alt={accreditation.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className={accreditation.isSquare ? "h-16 w-16 object-contain" : "h-14 w-auto max-w-[9rem] object-contain"}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
 
         <div className="space-y-5">
           {facts.map(({ label, value }) => (

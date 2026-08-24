@@ -77,10 +77,15 @@ export function Footer() {
             Accreditations
           </p>
           <div className="flex flex-wrap gap-3">
-            {/* Replace with RIBA Chartered Practice logo when provided by client */}
-            <span className="inline-flex items-center px-3 py-1.5 text-xs font-semibold tracking-wider uppercase border border-[var(--color-yellow)] text-[var(--color-stone)]">
-              RIBA Chartered Practice
-            </span>
+            <div className="inline-flex h-20 items-center border border-[var(--color-stone)]/30 px-4 py-3">
+              <img
+                src="/images/riba-chartered-practice.png"
+                alt="RIBA Chartered Practice"
+                className="h-12 w-auto max-w-[11rem] object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             {/* Replace with ARB Registered logo when provided by client */}
             <span className="inline-flex items-center px-3 py-1.5 text-xs font-semibold tracking-wider uppercase border border-[var(--color-yellow)] text-[var(--color-stone)]">
               ARB Registered

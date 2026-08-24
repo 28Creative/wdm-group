@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react"
+import { fireEvent, render, screen, within } from "@testing-library/react"
 import { describe, it, expect, vi } from "vitest"
 import About, { DIRECTORS } from "../about"
 
@@ -71,6 +71,41 @@ describe("About page — full build", () => {
     render(<About />)
     for (const director of DIRECTORS) {
       expect(screen.getAllByAltText(director.name).length).toBeGreaterThan(0)
+    }
+  })
+
+  it("shows the supplied accreditation marks in each director profile", () => {
+    const profileChecks = [
+      {
+        buttonName: /Read Martin's Story/i,
+        accreditations: [
+          ["Architects Registration Board registration mark for Martin Beaumont, registration number 063146I", "/images/arb-martin-beaumont.png"],
+        ],
+      },
+      {
+        buttonName: /Read Simon's Story/i,
+        accreditations: [
+          ["Architects Registration Board registration mark for Simon Jesson, registration number 065826J", "/images/arb-simon-jesson.png"],
+          ["Certified Passive House Consultant credential for Simon Jesson", "/images/passive-house-simon-jesson.png"],
+        ],
+      },
+      {
+        buttonName: /Read Parminder's Story/i,
+        accreditations: [
+          ["Architects Registration Board registration mark for Parminder Degan, registration number 076919C", "/images/arb-parminder-degan.png"],
+        ],
+      },
+    ]
+
+    for (const { buttonName, accreditations } of profileChecks) {
+      const { unmount } = render(<About />)
+      fireEvent.click(screen.getByRole("button", { name: buttonName }))
+
+      for (const [alt, src] of accreditations) {
+        expect(screen.getByRole("img", { name: alt })).toHaveAttribute("src", src)
+      }
+
+      unmount()
     }
   })
 
