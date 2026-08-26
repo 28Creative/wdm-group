@@ -44,6 +44,9 @@ describe("Coming soon mode", () => {
       "href",
       "https://www.linkedin.com/in/martin-beaumont-4216a24b/",
     );
+    expect(
+      screen.getByRole("link", { name: "Connect with Parminder on LinkedIn" }),
+    ).toHaveAttribute("href", "https://www.linkedin.com/in/parminder-degan-1b3bbb16/");
     expect(screen.getByRole("link", { name: "Follow WDM on LinkedIn" })).toHaveAttribute(
       "href",
       "https://uk.linkedin.com/company/wdm-group-ltd",

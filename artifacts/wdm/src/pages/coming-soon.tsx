@@ -17,6 +17,11 @@ export const COMING_SOON_SOCIAL_LINKS = [
     label: "Connect with Martin on LinkedIn",
   },
   {
+    name: "Parminder",
+    href: "https://www.linkedin.com/in/parminder-degan-1b3bbb16/",
+    label: "Connect with Parminder on LinkedIn",
+  },
+  {
     name: "WDM",
     href: "https://uk.linkedin.com/company/wdm-group-ltd",
     label: "Follow WDM on LinkedIn",
@@ -96,7 +101,7 @@ export default function ComingSoon() {
         </div>
 
         <nav
-          className="mt-11 grid w-full max-w-[38rem] grid-cols-1 gap-7 sm:grid-cols-3 sm:gap-8"
+          className="mt-11 grid w-full max-w-[50rem] grid-cols-1 gap-7 sm:grid-cols-4 sm:gap-6"
           aria-label="Social links"
         >
           {COMING_SOON_SOCIAL_LINKS.map((link) => (
